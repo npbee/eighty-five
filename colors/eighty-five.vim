@@ -150,7 +150,7 @@ elseif &background == "dark"
     call s:HL('Special', s:purple, s:none)
     hi SpecialKey gui=NONE guifg=#616161 guibg=NONE
     hi! link SpecialKey None
-    call s:HL('SpellBad', s:red, s:black_2)
+    call s:HL('SpellBad', s:red, s:bg)
     hi! link SpellCap SyntaxTodo
     hi! link SpellLocal SyntaxTodo
     hi! link SpellRare SyntaxTodo
@@ -162,10 +162,10 @@ elseif &background == "dark"
     hi! link TabLine SyntaxTodo
     hi! link TabLineFill SyntaxTodo
     hi! link TabLineSel SyntaxTodo
-    hi! link Title SyntaxTodo
+    hi! link Title None
     call s:HL('Todo', s:yellow, s:bg)
     call s:HL('Type', s:blue, s:none)
-    hi! link Underlined SyntaxTodo
+    hi! link Underlined None
     call s:HL('VertSplit', s:black_3, s:black_2)
     call s:HL('Visual', s:none, s:black_1, s:inverse)
     hi! link VisualNOS None
