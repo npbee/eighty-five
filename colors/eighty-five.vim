@@ -127,7 +127,7 @@ elseif &background == "dark"
     call s:HL('DiffDelete', s:black_2, s:red)
     call s:HL('DiffText', s:black_2, s:yellow)
     call s:HL('Directory', s:blue, s:none)
-    call s:HL('Error', s:black_2, s:red)
+    call s:HL('Error', s:none, s:red)
     call s:HL('Errormsg', s:black_2, s:red)
     call s:HL('FoldColumn', s:none, s:black_2)
     call s:HL('Folded', s:black_3, s:none)
