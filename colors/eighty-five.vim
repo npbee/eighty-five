@@ -186,6 +186,9 @@ elseif &background == "dark"
     call s:HL('jsClassDefinition', s:white_1, s:none)
     call s:HL('jsClassKeyword', s:blue, s:none)
 
+    " git
+    call s:HL('gitCommitOverflow', s:red, s:none)
+
     " User
     call s:HL('User1', s:red, s:none)
     call s:HL('User2', s:blue, s:none)
