@@ -180,6 +180,7 @@ elseif &background == "dark"
     call s:HL('jsExport', s:blue, s:none)
     call s:HL('jsGlobalObjects', s:blue, s:none)
     call s:HL('jsGlobalNodeObjects', s:blue, s:none)
+    call s:HL('jsBuiltIns', s:blue, s:none)
     call s:HL('jsExceptions', s:blue, s:none)
     call s:HL('jsReturn', s:orange, s:none)
     call s:HL('jsVariableDef', s:white_1, s:none)
