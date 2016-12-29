@@ -117,7 +117,7 @@ elseif &background == "dark"
     call s:HL('Comment', s:grey, 'NONE')
     hi! link Conceal SyntaxTodo
     call s:HL('Conditional', s:none, s:none)
-    hi! link Constant SyntaxTodo
+    call s:HL('Constant', s:green, s:none)
     call s:HL('Cursor', s:fg, s:none, s:reverse)
     call s:HL('CursorColumn', 'NONE', s:black_2)
     call s:HL('CursorLine', 'NONE', s:black_2)
