@@ -190,6 +190,9 @@ elseif &background == "dark"
     " git
     call s:HL('gitCommitOverflow', s:red, s:none)
 
+    " vim-sneak
+    call s:HL('Sneak', s:yellow, s:black_1, s:inverse)
+
     " User
     call s:HL('User1', s:red, s:none)
     call s:HL('User2', s:blue, s:none)
