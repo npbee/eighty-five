@@ -159,17 +159,10 @@ elseif &background == "dark"
     call s:HL('StatusLineNC', s:black_1, s:white_1, s:inverse)
     call s:HL('StorageClass', s:green, s:none)
     call s:HL('String', s:yellow, s:none)
-<<<<<<< Updated upstream
-    hi! link TabLine SyntaxTodo
-    hi! link TabLineFill SyntaxTodo
-    hi! link TabLineSel SyntaxTodo
     hi! link Title None
-=======
     call s:HL('TabLineSel', s:black_3, s:yellow)
     call s:HL('TabLineFill', s:black_3, s:none)
     call s:HL('TabLine', s:black_1, s:grey)
-    hi! link Title SyntaxTodo
->>>>>>> Stashed changes
     call s:HL('Todo', s:yellow, s:bg)
     call s:HL('Type', s:blue, s:none)
     hi! link Underlined None
