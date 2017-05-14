@@ -187,6 +187,9 @@ elseif &background == "dark"
     call s:HL('jsClassDefinition', s:white_1, s:none)
     call s:HL('jsClassKeyword', s:blue, s:none)
 
+    " elixir
+    call s:HL('elixirDefine', s:blue, s:none)
+
     " git
     call s:HL('gitCommitOverflow', s:red, s:none)
 
