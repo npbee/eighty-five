@@ -6,6 +6,7 @@ let s:none = 'NONE'
 let s:inverse = 'inverse'
 let s:bold = 'bold'
 let s:reverse = 'reverse'
+let s:italic = 'italic'
 
 let s:black_0 = '#282828'
 let s:black_1 = '#35312F'
@@ -114,7 +115,7 @@ if &background == "light"
 elseif &background == "dark"
     call s:HL('Boolean', s:orange, s:none)
     call s:HL('ColorColumn', 'NONE', s:black_2)
-    call s:HL('Comment', s:grey, 'NONE')
+    call s:HL('Comment', s:grey, s:italic)
     hi! link Conceal SyntaxTodo
     call s:HL('Conditional', s:none, s:none)
     call s:HL('Constant', s:green, s:none)
