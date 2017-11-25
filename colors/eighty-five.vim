@@ -115,7 +115,7 @@ if &background == "light"
 elseif &background == "dark"
     call s:HL('Boolean', s:orange, s:none)
     call s:HL('ColorColumn', 'NONE', s:black_2)
-    call s:HL('Comment', s:grey, s:italic)
+    call s:HL('Comment', s:grey, s:none, s:italic)
     hi! link Conceal SyntaxTodo
     call s:HL('Conditional', s:none, s:none)
     call s:HL('Constant', s:green, s:none)
