@@ -190,6 +190,12 @@ elseif &background == "dark"
 
     " elixir
     call s:HL('elixirDefine', s:blue, s:none)
+    call s:HL('elixirInclude', s:blue, s:none)
+    call s:HL('elixirModuleDefine', s:blue, s:none)
+    call s:HL('elixirPrivateDefine', s:blue, s:none)
+    call s:HL('elixirArguments', s:white_0, s:none)
+    call s:HL('elixirModuleDeclaration', s:white_1, s:none)
+    call s:HL('elixirAlias', s:none, s:none)
 
     " git
     call s:HL('gitCommitOverflow', s:red, s:none)
