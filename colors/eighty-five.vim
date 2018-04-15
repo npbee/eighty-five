@@ -165,7 +165,7 @@ elseif &background == "dark"
     call s:HL('TabLineFill', s:black_3, s:none)
     call s:HL('TabLine', s:black_1, s:grey)
     call s:HL('Todo', s:yellow, s:bg)
-    call s:HL('Type', s:blue, s:none)
+    call s:HL('Type', s:blue, s:none, s:italic)
     hi! link Underlined None
     call s:HL('VertSplit', s:black_3, s:black_2)
     call s:HL('Visual', s:none, s:black_1, s:inverse)
