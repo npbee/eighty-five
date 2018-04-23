@@ -187,6 +187,7 @@ elseif &background == "dark"
     call s:HL('jsVariableDef', s:white_1, s:none)
     call s:HL('jsClassDefinition', s:white_1, s:none)
     call s:HL('jsClassKeyword', s:blue, s:none)
+    call s:HL('jsFuncArg', s:white_0, s:none)
 
     " elixir
     call s:HL('elixirDefine', s:blue, s:none)
