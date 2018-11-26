@@ -26,6 +26,7 @@ let s:orange  = '#D88C61'
 let s:fg = s:white_2
 let s:bg = s:black_1
 
+
 function! s:HL(group, fg, bg, ...)
     let fg = a:fg
     let bg = a:bg
@@ -113,12 +114,12 @@ if &background == "light"
     hi Identifier gui=NONE guifg=NONE guibg=NONE
     hi PreProc gui=NONE guifg=NONE guibg=NONE
 elseif &background == "dark"
-    call s:HL('Boolean', s:orange, s:none)
+    call s:HL('Boolean', s:blue, s:none)
     call s:HL('ColorColumn', 'NONE', s:black_2)
     call s:HL('Comment', s:grey, s:none, s:italic)
     hi! link Conceal SyntaxTodo
     call s:HL('Conditional', s:none, s:none)
-    call s:HL('Constant', s:green, s:none)
+    call s:HL('Constant', s:blue, s:none)
     call s:HL('Cursor', s:fg, s:none, s:reverse)
     call s:HL('CursorColumn', 'NONE', s:black_2)
     call s:HL('CursorLine', 'NONE', s:black_2)
@@ -133,20 +134,20 @@ elseif &background == "dark"
     call s:HL('FoldColumn', s:none, s:black_2)
     call s:HL('Folded', s:black_3, s:none)
     hi! link Ignore None
-    call s:HL('IncSearch', s:none, s:black_1, s:inverse)
     call s:HL('LineNr', s:black_3, s:none)
     call s:HL('MatchParen', s:none, s:black_3)
-    call s:HL('ModeMsg', s:green, s:none)
-    call s:HL('MoreMsg', s:green, s:none)
+    call s:HL('ModeMsg', s:blue, s:none)
+    call s:HL('MoreMsg', s:blue, s:none)
     call s:HL('NonText', s:black_3, s:none)
     call s:HL('Normal', s:white_2, s:black_1)
-    call s:HL('Number', s:purple, s:none)
+    call s:HL('Number', s:blue, s:none)
     call s:HL('Pmenu', s:white_2, s:black_2)
     call s:HL('PmenuSbar', s:none, s:black_2)
-    call s:HL('PmenuSel', s:yellow, s:black_2)
+    call s:HL('PmenuSel', s:blue, s:black_2)
     call s:HL('PmenuThumb', s:none, s:black_3)
     hi! link Question NONE
     call s:HL('Search', s:yellow, s:black_1, s:inverse)
+    call s:HL('IncSearch', s:none, s:black_1, s:inverse)
     call s:HL('SignColumn', s:orange, s:none)
     call s:HL('Special', s:purple, s:none)
     hi SpecialKey gui=NONE guifg=#616161 guibg=NONE
@@ -159,7 +160,7 @@ elseif &background == "dark"
     call s:HL('StatusLine', s:black_1, s:black_2, s:inverse)
     call s:HL('StatusLineNC', s:black_1, s:white_1, s:inverse)
     call s:HL('StorageClass', s:green, s:none)
-    call s:HL('String', s:yellow, s:none)
+    call s:HL('String', s:blue, s:none)
     hi! link Title None
     call s:HL('TabLineSel', s:black_3, s:yellow)
     call s:HL('TabLineFill', s:black_3, s:none)
