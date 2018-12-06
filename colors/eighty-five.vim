@@ -47,9 +47,9 @@ call s:h('ColorColumn',  { "bg": s:black_2 })
 call s:h('CursorLine',   { "bg": s:subtle })
 call s:h('CursorLineNr', { 'bg': s:black_2 })
 call s:h("Cursor",       { "fg": s:fg, "gui": "reverse" })
-call s:h('DiffAdd',      { "fg": s:black_2, "bg": s:green })
-call s:h('DiffChange',   { "bg": s:fg })
-call s:h('DiffDelete',   { "fg": s:black_2, "bg": s:red })
+call s:h('DiffAdd',      { "fg": s:green, "bg": s:black_1 })
+call s:h('DiffChange',   { "bg": s:black_2, "fg": s:yellow })
+call s:h('DiffDelete',   { "fg": s:red, "bg": s:black_1 })
 call s:h('DiffText',     { "fg": s:black_2, "bg": s:yellow })
 call s:h('Directory',    { "fg": s:blue })
 call s:h('Error',        { "fg": s:red })
@@ -136,6 +136,13 @@ call s:h('elixirModuleDeclaration', { "fg": s:white_1 })
 
 " Highlights - vim-sneak ------------------------------------------{{{
 call s:h('Sneak', { "fg": s:yellow, "bg": s:black_1, "gui": "inverse" })
+" }}}
+
+" Highlights - git ------------------------------------------{{{
+hi! link diffAdded DiffAdd
+hi! link diffRemoved DiffDelete
+hi! link diffChanged DiffChange
+
 " }}}
 
 " Highlights - user ------------------------------------------{{{
