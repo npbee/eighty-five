@@ -3,21 +3,18 @@ syntax reset
 let g:colors_name = "eighty-five"
 
 let s:black_0 = { "gui": "#282828", "cterm": "0" }
-let s:black_1 = { "gui": "#35312F", "cterm": "8" }
-let s:black_2 = { "gui": "#46403D", "cterm": "240" }
-let s:black_3 = { "gui": '#877869', "cterm": "9" }
+let s:black_1 = { "gui": "#35312F", "cterm": "236" }
+let s:black_2 = { "gui": "#46403D", "cterm": "237" }
+let s:black_3 = { "gui": '#877869', "cterm": "246" }
 let s:white_0 = { "gui": "#CFBC97", "cterm": "15" }
 let s:white_1 = { "gui": "#FBEFC0", "cterm": "243" }
-let s:white_2 = { "gui": '#E8D6A9', "cterm": "246"}
+let s:white_2 = { "gui": '#E8D6A9', "cterm": "255"}
 let s:red     = { "gui": '#E25C5C', "cterm": "1" }
 let s:blue    = { "gui": '#789B8D', "cterm": "153" }
 let s:green   = { "gui": '#7DA76B', "cterm": "157"}
 let s:purple  = { "gui": '#BD8190', "cterm": "5" }
 let s:yellow  = { "gui": '#D3AF64', "cterm": "11" }
 let s:orange  = { "gui": '#D88C61', "cterm": "3" }
-
-let s:fg = s:white_2
-let s:bg = s:black_1
 
 " https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
