@@ -6,9 +6,9 @@ let s:black_0 = { "gui": "#282828", "cterm": "0" }
 let s:black_1 = { "gui": "#35312F", "cterm": "236" }
 let s:black_2 = { "gui": "#46403D", "cterm": "237" }
 let s:black_3 = { "gui": '#877869', "cterm": "246" }
-let s:white_0 = { "gui": "#CFBC97", "cterm": "15" }
-let s:white_1 = { "gui": "#FBEFC0", "cterm": "243" }
-let s:white_2 = { "gui": '#E8D6A9', "cterm": "255"}
+let s:grey_0 = { "gui": "#CFBC97", "cterm": "15" }
+let s:grey_1 = { "gui": "#FBEFC0", "cterm": "243" }
+let s:grey_2 = { "gui": '#E8D6A9', "cterm": "255"}
 let s:red     = { "gui": '#E25C5C', "cterm": "1" }
 let s:blue    = { "gui": '#789B8D', "cterm": "153" }
 let s:green   = { "gui": '#7DA76B', "cterm": "157"}
@@ -30,8 +30,11 @@ endfunction
 
 if &background == "dark"
   let s:bg = s:black_1
-  let s:fg = s:white_2
+  let s:fg = s:grey_2
   let s:subtle = s:black_2
+  let s:norm = s:grey_2
+  let s:norm_subtle = s:grey_0
+  let s:cursor_line = s:black_2
 else
   " TODO
 endif
@@ -39,11 +42,28 @@ endif
 call s:h('SyntaxTodo', { "fg": s:red, "bg": s:yellow, "gui": "bold" })
 call s:h('None', { 'fg': s:fg, 'bg': s:bg, 'gui': 'NONE' })
 
+" __Normal__
+" Background / Text color
+if has("gui")
+  call s:h("Normal", { "fg": s:norm, "bg": s:bg })
+  call s:h("Cursor", { "fg": s:bg, "gui": "reverse" })
+else
+  call s:h("Normal", { "fg": s:norm})
+  hi! link Cursor Identifier
+endif
+hi! link Identifier Normal
+hi! link Function Identifier
+hi! link VertSplit Normal
+
+call s:h('Accent1',  { "fg": s:blue })
+call s:h('Accent2', { "fg": s:green })
+
+call s:h("Noise",         {"fg": s:norm_subtle, "gui": "NONE"})
+
 " Highlights - UI ------------------------------------------{{{
-call s:h('ColorColumn',  { "bg": s:black_2 })
-call s:h('CursorLine',   { "bg": s:subtle })
+call s:h('ColorColumn',  { "bg": s:cursor_line })
+call s:h('CursorLine',   { "bg": s:cursor_line })
 call s:h('CursorLineNr', { 'bg': s:black_2 })
-call s:h("Cursor",       { "fg": s:fg, "gui": "reverse" })
 call s:h('DiffAdd',      { "fg": s:green, "bg": s:black_1 })
 call s:h('DiffChange',   { "bg": s:black_2, "fg": s:yellow })
 call s:h('DiffDelete',   { "fg": s:red, "bg": s:black_1 })
@@ -56,9 +76,9 @@ call s:h('Folded',       { "fg": s:black_3 })
 call s:h('IncSearch',    { "bg": s:black_3, "gui": "inverse" })
 call s:h('MatchParen',   { "bg": s:black_3, "gui": "bold" })
 call s:h('MoreMsg',      { "fg": s:blue })
-call s:h("Normal",       { "fg": s:fg, "bg": s:bg })  " Background / Text color
+" call s:h("Normal",       { "fg": s:fg, "bg": s:bg })  " Background / Text color
 call s:h("NonText",      { "fg": s:subtle })
-call s:h('Pmenu',        { "fg": s:white_2, "bg": s:black_2 })
+call s:h('Pmenu',        { "fg": s:grey_2, "bg": s:black_2 })
 call s:h('PmenuSbar',    { "bg": s:black_2 })
 call s:h('PmenuSel',     { "fg": s:blue, "bg": s:black_2 })
 call s:h('PmenuThumb',   { "bg": s:black_3 })
@@ -86,26 +106,24 @@ hi! link Title None
 call s:h('Boolean',      { "fg": s:orange })
 call s:h('Comment',      { "fg": s:black_3, "gui": "italic" })
 call s:h('Constant',     { "fg": s:blue })
-call s:h("Function",     { "gui": "bold", "cterm": "bold" })
-call s:h("Statement",    { "fg": s:white_2 })
-call s:h('StorageClass', { "fg": s:green })
+call s:h("Statement",    { "fg": s:grey_2 })
 call s:h('String',       { "fg": s:yellow })
 call s:h('Todo',         { "fg": s:yellow, "bg": s:bg })
-call s:h('Type',         { "fg": s:blue, "gui": "italic" })
 hi! link Conditional None
 hi! link Define None
 hi! link Delimiter None
-hi! link Identifier None
 hi! link Include None
 hi! link Macro None
 hi! link Number Constant
 hi! link PreCondit None
 hi! link PreProc None
-hi! link Special Constant
-hi! link SpecialChar Constant
+hi! link Special Accent1
+hi! link SpecialChar Accent1
+hi! link StorageClass Accent2
 hi! link Structure None
 hi! link Tag None
-hi! link Typedef Type
+hi! link Type Accent1
+hi! link Typedef Accent1
 hi! link Underlined None
 " }}}
 
@@ -117,9 +135,9 @@ hi! link jsGlobalObjects Constant
 hi! link jsGlobalNodeObjects Constant
 hi! link jsExections Constant
 call s:h('jsReturn', { "fg": s:orange })
-call s:h('jsVariableDef', { "fg": s:white_1 })
-call s:h('jsClassDefinition', { "fg": s:white_1 })
-call s:h('jsFuncArg', { "fg": s:white_0 })
+call s:h('jsVariableDef', { "fg": s:grey_1 })
+call s:h('jsClassDefinition', { "fg": s:grey_1 })
+call s:h('jsFuncArg', { "fg": s:grey_0 })
 " }}}
 
 " Highlights - Elixir ------------------------------------------{{{
@@ -127,8 +145,8 @@ hi! link elixirDefine Constant
 hi! link elixirInclude Constant
 hi! link elixirModuleDefine Constant
 hi! link elixirPrivateDefine Constant
-call s:h('elixirArguments', { "fg": s:white_0 })
-call s:h('elixirModuleDeclaration', { "fg": s:white_1 })
+call s:h('elixirArguments', { "fg": s:grey_0 })
+call s:h('elixirModuleDeclaration', { "fg": s:grey_1 })
 " }}}
 
 " Highlights - vim-sneak ------------------------------------------{{{
