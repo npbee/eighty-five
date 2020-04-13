@@ -35,6 +35,8 @@ let s:grey_900 = { "gui": "#423D33", "cterm": "233" }
 let s:grey_1000 = { "gui": "#27241D", "cterm": "230" }
 
 let s:norm     = { "gui": "#E8D6A9", "cterm": "251" }
+let s:norm_subtle = { "gui": "#BEB08B", "cterm": "251" }
+
 let s:bg_dark  = { "gui": "#35312F", "cterm": "8"   }
 
 let s:black           = { "gui": "#000000", "cterm": "0"   }
@@ -60,7 +62,7 @@ if &background == "dark"
   let s:bg_subtle        = s:grey_800
   let s:bg_very_subtle   = s:grey_900
   let s:norm             = s:norm
-  let s:norm_subtle      = s:grey_400
+  let s:norm_subtle      = s:norm_subtle
   let s:norm_very_subtle = s:grey_600
   let s:purple           = s:light_purple
   let s:cyan             = s:light_cyan
@@ -195,7 +197,7 @@ hi! link Directory        Constant
 hi! link Title            Constant
 
 " __Statement__
-call s:h("Statement",     {"fg": s:norm, "gui": "bold"})
+call s:h("Statement",     {"fg": s:norm })
 hi! link Include          Statement
 hi! link Repeat           Statement
 hi! link Label            Statement
@@ -303,6 +305,12 @@ hi link StorageClass Statement
 hi link jsReturn Orange
 hi link jsxPunct Normal
 hi link jsxCloseString Normal
+hi link jsImport Constant
+hi link jsIf Noise
+hi link jsElse Noise
+
+" __CSS__
+hi link cssDefinition Orange
 
 hi link xmlTag Constant
 hi link xmlTagName xmlTag
