@@ -15,329 +15,115 @@
 "   https://github.com/reedes/vim-colors-pencil (MIT License)
 "
 """
+if !has('gui_running') && &t_Co < 256
+  finish
+endif
+
+set background=dark
 hi clear
 
-if exists('syntax on')
-    syntax reset
+  syntax reset
+if exists('syntax_on')
 endif
 
-let g:colors_name='eighty-five'
+let g:colors_name = 'eighty-five'
 
-let s:grey_100 = { "gui": "#FAF9F7", "cterm": "255" }
-let s:grey_200 = { "gui": "#E8E6E1", "cterm": "254" }
-let s:grey_300 = { "gui": "#D3CEC4", "cterm": "253" }
-let s:grey_400 = { "gui": "#B8B2A7", "cterm": "251" }
-let s:grey_500 = { "gui": "#A39E93", "cterm": "248" }
-let s:grey_600 = { "gui": "#857F72", "cterm": "243" }
-let s:grey_700 = { "gui": "#625D52", "cterm": "238" }
-let s:grey_800 = { "gui": "#504A40", "cterm": "235" }
-let s:grey_900 = { "gui": "#423D33", "cterm": "233" }
-let s:grey_1000 = { "gui": "#27241D", "cterm": "230" }
+let s:bg                = { "gui": "#353331" }
+let s:fg                = { "gui": "#e4d2a6" }
+let s:fg_dimmed         = { "gui": "#c4b28c" }
 
-let s:norm     = { "gui": "#E8D6A9", "cterm": "251" }
-let s:norm_subtle = { "gui": "#BEB08B", "cterm": "251" }
+let s:grey050           = { "gui": "#F7F7F7" }
+let s:grey100           = { "gui": '#E1E1E1' }
+let s:grey200           = { "gui": '#CFCFCF' }
+let s:grey300           = { "gui": '#B1B1B1' }
+let s:grey400           = { "gui": '#9E9E9E' }
+let s:grey500           = { "gui": '#7E7E7E' }
+let s:grey600           = { "gui": '#626262' }
+let s:grey700           = { "gui": '#515151' }
+let s:grey750           = { "gui": '#404040' }
+let s:grey800           = s:bg
+let s:grey850           = { "gui": "#3E3937" }
+let s:grey900           = { "gui": '#222222' }
 
-let s:bg_dark  = { "gui": "#35312F", "cterm": "8"   }
+let s:green             = { "gui": "#93c19a" }
+let s:orange            = { "gui": "#d89a76" }
+let s:purple            = { "gui": "#b98895" }
+let s:blue              = { "gui": "#7e9b8f" }
+let s:red               = { "gui": "#e27575" }
+let s:yellow_dim        = { "gui": "#d3ab54" }
+let s:yellow            = { "gui": "#d3b26a" }
+let s:error             = s:red
 
-let s:black           = { "gui": "#000000", "cterm": "0"   }
-
-let s:white           = { "gui": "#F1F1F1", "cterm": "15"  }
-
-let s:dark_red        = { "gui": "#C30771", "cterm": "1"   }
-let s:light_red       = { "gui": "#E25C5C", "cterm": "1"   }
-let s:dark_blue       = { "gui": "#008EC4", "cterm": "4"   }
-let s:light_blue      = { "gui": "#789B8D", "cterm": "153" }
-let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
-let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
-let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
-let s:light_green     = { "gui": "#7DA76B", "cterm": "10"  }
-let s:dark_purple     = { "gui": "#523C79", "cterm": "5"   }
-let s:light_purple    = { "gui": "#BD8190", "cterm": "13"  }
-let s:light_yellow    = { "gui": "#D3AF64", "cterm": "11"  }
-let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
-let s:orange          = { "gui": '#D88C61', "cterm": "3" }
-
-if &background == "dark"
-  let s:bg               = s:bg_dark
-  let s:bg_subtle        = s:grey_800
-  let s:bg_very_subtle   = s:grey_900
-  let s:norm             = s:norm
-  let s:norm_subtle      = s:norm_subtle
-  let s:norm_very_subtle = s:grey_600
-  let s:purple           = s:light_purple
-  let s:cyan             = s:light_cyan
-  let s:green            = s:light_green
-  let s:red              = s:light_red
-  let s:yellow           = s:light_yellow
-  let s:blue             = s:light_blue
-  let s:visual           = s:grey_800
-  let s:cursor_line      = s:grey_900
-  let s:constant         = s:light_blue
-  let s:comment          = s:grey_600
-  let s:selection        = s:light_yellow
-  let s:selection_fg     = s:black
-  let s:ok               = s:light_green
-  let s:warning          = s:yellow
-  let s:error            = s:light_red
-else
-  let s:bg               = s:white
-  let s:bg_subtle        = s:lighter_gray
-  let s:bg_very_subtle   = s:light_gray
-  let s:norm             = s:grey_3
-  let s:norm_subtle      = s:grey_2
-  let s:norm_very_subtle = s:medium_gray
-  let s:purple           = s:dark_purple
-  let s:cyan             = s:dark_cyan
-  let s:green            = s:dark_green
-  let s:red              = s:dark_red
-  let s:yellow           = s:dark_yellow
-  let s:blue             = s:light_blue
-  let s:visual           = s:light_blue
-  let s:cursor_line      = s:lightest_gray
-  let s:constant         = s:dark_blue
-  let s:comment          = s:light_gray
-  let s:selection        = s:light_yellow
-  let s:selection_fg     = s:grey_3
-  let s:ok               = s:light_green
-  let s:warning          = s:yellow
-  let s:error            = s:dark_red
-endif
-
-unlet s:black
-unlet s:white
-unlet s:dark_red
-unlet s:light_red
-unlet s:dark_blue
-unlet s:light_blue
-unlet s:dark_cyan
-unlet s:light_cyan
-unlet s:dark_green
-unlet s:light_green
-unlet s:dark_purple
-unlet s:light_purple
-unlet s:light_yellow
-unlet s:dark_yellow
-
-" https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
-  execute "highlight" a:group
+  execute "hi!" a:group
     \ "guifg="   (has_key(a:style, "fg")    ? a:style.fg.gui   : "NONE")
     \ "guibg="   (has_key(a:style, "bg")    ? a:style.bg.gui   : "NONE")
     \ "guisp="   (has_key(a:style, "sp")    ? a:style.sp.gui   : "NONE")
     \ "gui="     (has_key(a:style, "gui")   ? a:style.gui      : "NONE")
-    \ "ctermfg=" (has_key(a:style, "fg")    ? a:style.fg.cterm : "NONE")
-    \ "ctermbg=" (has_key(a:style, "bg")    ? a:style.bg.cterm : "NONE")
-    \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
+    " \ "ctermfg=" (has_key(a:style, "fg")    ? a:style.fg.cterm : "NONE")
+    " \ "ctermbg=" (has_key(a:style, "bg")    ? a:style.bg.cterm : "NONE")
+    " \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
 
-" __Normal__
-call s:h("Normal",    {"fg": s:norm, "bg": s:bg})
-call s:h("Cursor",    {"fg": s:bg, "bg": s:norm})
 
-" __Highlights__
+" A comment
+call s:h("ColorColumn", { "bg": s:grey850 })
+call s:h("Comment",     { "fg": s:grey500, "gui": "italic" })
+call s:h("Constant",    { "fg": s:fg })
+call s:h("CursorLine",  { "bg": s:grey850 })
+call s:h("Directory",   { "fg": s:blue })
+call s:h("EndOfBuffer", { "fg": s:bg, "bg": s:bg })
+call s:h("Error",       { "bg": s:error, "fg": s:fg })
+call s:h("ErrorMsg",    { "bg": s:error, "fg": s:fg })
+call s:h("Folded",      { "bg": s:grey750, "fg": s:fg })
+call s:h("FoldColumn",  { "bg": s:bg, "fg": s:fg })
+call s:h("Identifier",  { "fg": s:fg })
+call s:h("IncSearch",   { "fg": s:grey900, "bg": s:yellow })
+call s:h("LineNr",      { "bg": s:grey850 })
+call s:h("MatchParen",  { "fg": s:grey200, "gui": "bold" })
+call s:h("MoreMsg",     { "fg": s:green })
+call s:h("Normal",      { "fg": s:fg, "bg": s:bg})
+call s:h("Number",      { "fg": s:purple })
+call s:h("Noise",       { "fg": s:fg_dimmed })
+call s:h("Pmenu",       { "bg": s:grey850 })
+call s:h("NonText",     { "fg": s:grey850 })
+call s:h("PmenuSel",    { "bg": s:grey700 })
+call s:h("PmenuThumb",  { "bg": s:grey700 })
+call s:h("PmenuSbar",   { "bg": s:grey700 })
+call s:h("PreProc",     { "fg": s:fg })
+call s:h("Search",      { "fg": s:grey900, "bg": s:yellow_dim })
+call s:h("SignColumn",  { "bg": s:bg })
+call s:h("Special",     { "fg": s:fg })
+call s:h("Statement",   { "fg": s:fg })
+call s:h("StatusLine",  { "bg": s:bg, "fg": s:grey500 })
+call s:h("StatusLineNC",{ "bg": s:bg, "fg": s:grey500 })
+call s:h("StorageClass",{ "fg": s:blue })
+call s:h("String",      { "fg": s:yellow })
+call s:h("Title",       { "fg": s:fg })
+call s:h("Todo",        { "bg": s:yellow, "fg": s:bg })
+call s:h("Type",        { "fg": s:blue })
+call s:h("Underlined",  { "fg": s:blue })
+call s:h("VertSplit",   { "bg": s:bg, "fg": s:grey700 })
+call s:h("Visual",      { "bg": s:grey750 })
+call s:h("WarningMsg",  { "fg": s:grey900, "bg": s:yellow })
+
 call s:h('User1',     { "fg": s:red })
-call s:h('Red',     { "fg": s:red })
-
 call s:h('User2',     { "fg": s:blue })
-call s:h('Blue',      { "fg": s:blue })
-
 call s:h('User3',     { "fg": s:green })
-call s:h('Green',     { "fg": s:green })
-
 call s:h('User4',     { "fg": s:purple })
-call s:h('Purple',     { "fg": s:purple })
-
 call s:h('User5',     { "fg": s:yellow })
-call s:h('Yellow',     { "fg": s:yellow })
-
 call s:h('User6',     { "fg": s:orange })
-call s:h('Orange',     { "fg": s:orange })
 
+call s:h("jsxTag",            { "fg": s:fg })
+call s:h("jsxEndTag",         { "fg": s:fg })
+call s:h("jsReturn",          { "fg": s:orange })
+hi! link jsImport StorageClass
+hi! link jsExport StorageClass
+hi! link jsBuiltinValues StorageClass
+hi! link jsFunction StorageClass
 
-hi! link Identifier       Normal
-hi! link Function         Identifier
-hi! link Type             Blue
-hi! link StorageClass     Type
-hi! link Structure        Type
-hi! link Typedef          Type
-hi! link Special          Normal
-hi! link SpecialChar      Special
-hi! link Tag              Special
-hi! link Delimiter        Special
-hi! link SpecialComment   Special
-hi! link Debug            Special
-hi! link VertSplit        Normal
-hi! link PreProc          Normal
-hi! link Define           PreProc
-hi! link Macro            PreProc
-hi! link PreCondit        PreProc
-hi! link Todo             Yellow
+hi! link elixirModuleDefine StorageClass
 
-" __Operator__
-call s:h("Noise",         {"fg": s:norm_subtle, "gui": "NONE"})
-hi! link Operator         Noise
-hi! link LineNr           Noise
-hi! link CursorLineNr     LineNr
-hi! link FoldColumn       LineNr
-hi! link SignColumn       LineNr
-hi! link Conditonal       Noise
-
-" __Comment__
-call s:h("Comment",       {"fg": s:comment, "gui": "italic"})
-
-" __Basic Syntax__
-call s:h("Constant",      {"fg": s:constant})
-hi! link Character        Constant
-hi! link Number           Constant
-hi! link Boolean          Orange
-
-hi! link Float            Constant
-hi! link String           Yellow
-hi! link Directory        Constant
-hi! link Title            Constant
-
-" __Statement__
-call s:h("Statement",     {"fg": s:norm })
-hi! link Include          Statement
-hi! link Repeat           Statement
-hi! link Label            Statement
-hi! link Keyword          Constant
-hi! link Exception        Statement
-
-" __ErrorMsg__
-call s:h("ErrorMsg",      {"fg": s:error})
-hi! link Error            ErrorMsg
-hi! link Question         ErrorMsg
-" __WarningMsg__
-call s:h("WarningMsg",    {"fg": s:warning})
-" __MoreMsg__
-call s:h("MoreMsg",       {"fg": s:norm_subtle, "cterm": "bold", "gui": "bold"})
-hi! link ModeMsg          MoreMsg
-
-" __NonText__
-call s:h("NonText",       {"fg": s:norm_very_subtle})
-hi! link Folded           NonText
-hi! link qfLineNr         NonText
-
-" __Search__
-call s:h("Search",        {"bg": s:selection, "fg": s:selection_fg})
-call s:h("IncSearch",     {"bg": s:selection, "fg": s:selection_fg, "gui": "bold"})
-
-" __Visual__
-call s:h("Visual",        {"bg": s:visual, "gui": "inverse"})
-" __VisualNOS__
-call s:h("VisualNOS",     {"bg": s:grey_800})
-
-call s:h("Ignore",        {"fg": s:bg})
-
-" __DiffAdd__
-call s:h("DiffAdd",       {"fg": s:green})
-" __DiffDelete__
-call s:h("DiffDelete",    {"fg": s:red})
-" __DiffChange__
-call s:h("DiffChange",    {"fg": s:yellow})
-" __DiffText__
-call s:h("DiffText",      {"fg": s:constant})
-
-if has("gui_running")
-  call s:h("SpellBad",    {"gui": "underline", "sp": s:red})
-  call s:h("SpellCap",    {"gui": "underline", "sp": s:ok})
-  call s:h("SpellRare",   {"gui": "underline", "sp": s:error})
-  call s:h("SpellLocal",  {"gui": "underline", "sp": s:ok})
-else
-  call s:h("SpellBad",    {"cterm": "underline", "fg": s:red})
-  call s:h("SpellCap",    {"cterm": "underline", "fg": s:ok})
-  call s:h("SpellRare",   {"cterm": "underline", "fg": s:error})
-  call s:h("SpellLocal",  {"cterm": "underline", "fg": s:ok})
-endif
-
-hi! link helpHyperTextEntry Title
-hi! link helpHyperTextJump  String
-
-" __StatusLine__
-call s:h("StatusLine",        {"gui": "underline", "bg": s:bg, "fg": s:norm_very_subtle})
-" __StatusLineNC__
-call s:h("StatusLineNC",      {"gui": "underline", "bg": s:bg, "fg": s:bg_subtle})
-" __WildMenu__
-call s:h("WildMenu",          {"gui": "underline,bold", "bg": s:bg, "fg": s:norm})
-
-call s:h("StatusLineOk",      {"gui": "underline", "bg": s:bg, "fg": s:ok})
-call s:h("StatusLineError",   {"gui": "underline", "bg": s:bg, "fg": s:error})
-call s:h("StatusLineWarning", {"gui": "underline", "bg": s:bg, "fg": s:warning})
-
-" __Pmenu__
-call s:h("Pmenu",         {"fg": s:norm, "bg": s:cursor_line})
-hi! link PmenuSbar        Pmenu
-hi! link PmenuThumb       Pmenu
-" __PmenuSel__
-call s:h("PmenuSel",      {"fg": s:blue, "bg": s:cursor_line, "gui": "bold"})
-
-hi! link TabLine          Normal
-hi! link TabLineSel       Keyword
-hi! link TabLineFill      Normal
-
-" __CursorLine__
-call s:h("CursorLine",    {"bg": s:cursor_line})
-" __CursorColumn__
-call s:h("ColorColumn",   {"bg": s:cursor_line})
-
-" __MatchParen__
-call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:norm})
-
-hi! link htmlH1 Normal
-hi! link htmlH2 Normal
-hi! link htmlH3 Normal
-hi! link htmlH4 Normal
-hi! link htmlH5 Normal
-hi! link htmlH6 Normal
-
-hi link diffRemoved       DiffDelete
-hi link diffAdded         DiffAdd
-
-" __JS__
-hi link jsFlowTypeKeyword Statement
-hi link jsFlowImportType Statement
-hi link jsFunction Statement
-hi link jsGlobalObjects Normal
-hi link jsGlobalNodeObjects Normal
-hi link jsArrowFunction Noise
-hi link StorageClass Statement
-hi link jsReturn Orange
-hi link jsxPunct Normal
-hi link jsxCloseString Normal
-hi link jsImport Constant
-hi link jsIf Noise
-hi link jsElse Noise
-
-" __CSS__
-hi link cssDefinition Orange
-
-hi link xmlTag Constant
-hi link xmlTagName xmlTag
-hi link xmlEndTag xmlTag
-hi link xmlAttrib xmlTag
-
-hi link markdownH1 Statement
-hi link markdownH2 Statement
-hi link markdownH3 Statement
-hi link markdownH4 Statement
-hi link markdownH5 Statement
-hi link markdownH6 Statement
-hi link markdownListMarker Constant
-hi link markdownCode Constant
-hi link markdownCodeBlock Constant
-hi link markdownCodeDelimiter Constant
-hi link markdownHeadingDelimiter Constant
-
-hi link yamlBlockMappingKey Statement
-hi link pythonOperator Statement
-
-hi link ALEWarning WarningMsg
-hi link ALEWarningSign WarningMsg
-hi link ALEError ErrorMsg
-hi link ALEErrorSign ErrorMsg
-hi link ALEInfo InfoMsg
-hi link ALEInfoSign InfoMsg
-
-hi link sqlStatement Statement
-hi link sqlKeyword Keyword
+call s:h("CocInfoSign",    { "fg": s:grey500 })
+call s:h("CocWarningSign", { "fg": s:yellow })
+call s:h("CocErrorSign",   { "fg": s:error })
