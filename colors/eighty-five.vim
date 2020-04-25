@@ -30,7 +30,7 @@ let g:colors_name = 'eighty-five'
 
 let s:bg                = { "gui": "#353331" }
 let s:fg                = { "gui": "#e4d2a6" }
-let s:fg_dimmed         = { "gui": "#c4b28c" }
+let s:fg_dimmed         = { "gui": "#e4d2a6" }
 
 let s:grey050           = { "gui": "#F7F7F7" }
 let s:grey100           = { "gui": '#E1E1E1' }
@@ -49,9 +49,10 @@ let s:green             = { "gui": "#93c19a" }
 let s:orange            = { "gui": "#d89a76" }
 let s:purple            = { "gui": "#b98895" }
 let s:blue              = { "gui": "#7e9b8f" }
+let s:blue_dimmmed      = { "gui": "#879891" }
 let s:red               = { "gui": "#e27575" }
 let s:yellow_dim        = { "gui": "#d3ab54" }
-let s:yellow            = { "gui": "#d3b26a" }
+let s:yellow            = { "gui": "#d3b471" }
 let s:error             = s:red
 
 function! s:h(group, style)
@@ -113,6 +114,7 @@ call s:h('User3',     { "fg": s:green })
 call s:h('User4',     { "fg": s:purple })
 call s:h('User5',     { "fg": s:yellow })
 call s:h('User6',     { "fg": s:orange })
+call s:h("BlueDimmed",{ "fg": s:blue_dimmmed })
 
 call s:h("jsxTag",            { "fg": s:fg })
 call s:h("jsxEndTag",         { "fg": s:fg })
@@ -121,9 +123,16 @@ hi! link jsImport StorageClass
 hi! link jsExport StorageClass
 hi! link jsBuiltinValues StorageClass
 hi! link jsFunction StorageClass
+hi! link jsTemplateBrace BlueDimmed
 
 hi! link elixirModuleDefine StorageClass
 
 call s:h("CocInfoSign",    { "fg": s:grey500 })
 call s:h("CocWarningSign", { "fg": s:yellow })
 call s:h("CocErrorSign",   { "fg": s:error })
+
+hi! link htmlTagName StorageClass
+hi! link htmlArg Noise
+
+hi! link cssTagName StorageClass
+hi! link cssClassName BlueDimmed
