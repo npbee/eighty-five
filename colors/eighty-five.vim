@@ -1,19 +1,13 @@
+"""
 " Name:       eighty-five.vim
 " Version:    0.1
 " License:    The MIT License (MIT)
 "
-" Based on
-"
-"   https://github.com/andreypopp/vim-colors-plain (MIT License)
-"
-" which in turn is based on
-"
-"   https://github.com/pbrisbin/vim-colors-off (MIT License)
-"
-" which in turn based on
-"
-"   https://github.com/reedes/vim-colors-pencil (MIT License)
-"
+" Thanks:
+"   - https://github.com/cocopon/iceberg.vim
+"   - https://github.com/andreypopp/vim-colors-plain
+"   - https://github.com/morhetz/gruvbox
+"   - https://github.com/chriskempson/tomorrow-theme
 """
 if !has('gui_running') && &t_Co < 256
   finish
@@ -69,14 +63,12 @@ function! s:h(group, style)
     " \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
 
-" TODO
-
-
 " A comment
 call s:h("ColorColumn", { "bg": s:grey775 })
 call s:h("Comment",     { "fg": s:grey500, "gui": "italic" })
 call s:h("Constant",    { "fg": s:fg })
 call s:h("CursorLine",  { "bg": s:grey775 })
+call s:h("CursorLineNr",{ "fg": s:yellow_washed })
 call s:h("DiffAdd",     { "bg": s:green, "fg": s:grey900 })
 call s:h("DiffChange",  { "bg": s:blue, "fg": s:grey900 })
 call s:h("DiffDelete",  { "bg": s:red, "fg": s:grey900 })
@@ -89,7 +81,7 @@ call s:h("Folded",      { "bg": s:grey750, "fg": s:fg })
 call s:h("FoldColumn",  { "bg": s:bg, "fg": s:fg })
 call s:h("Identifier",  { "fg": s:fg })
 call s:h("IncSearch",   { "fg": s:grey900, "bg": s:yellow_dimmed })
-call s:h("LineNr",      { "bg": s:grey850 })
+call s:h("LineNr",      { "bg": s:bg, "fg": s:grey600 })
 call s:h("MatchParen",  { "fg": s:grey200, "gui": "bold" })
 call s:h("MoreMsg",     { "fg": s:green })
 call s:h("Normal",      { "fg": s:fg, "bg": s:bg})
