@@ -140,6 +140,12 @@ call s:h("CocInfoSign",    { "fg": s:grey500 })
 call s:h("CocWarningSign", { "fg": s:yellow })
 call s:h("CocErrorSign",   { "fg": s:error })
 
+hi! link typescriptVariable StorageClass
+hi! link typescriptFuncKeyword StorageClass
+hi! link typescriptStatementKeyword Statement
+hi! link typescriptBoolean StorageClass
+hi! link typescriptGlobal StorageClass
+
 hi! link htmlTagName StorageClass
 hi! link htmlArg Noise
 
