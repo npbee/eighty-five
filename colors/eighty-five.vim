@@ -145,6 +145,10 @@ hi! link typescriptFuncKeyword StorageClass
 hi! link typescriptStatementKeyword Statement
 hi! link typescriptBoolean StorageClass
 hi! link typescriptGlobal StorageClass
+hi! link typescriptReserved StorageClass
+hi! link typescriptImport StorageClass
+hi! link typescriptExport StorageClass
+hi! link typescriptStatementKeyword jsReturn
 
 hi! link htmlTagName StorageClass
 hi! link htmlArg Noise
