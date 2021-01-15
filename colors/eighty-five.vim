@@ -117,6 +117,11 @@ call s:h("Visual",      { "bg": s:grey750 })
 call s:h("WarningMsg",  { "fg": s:grey900, "bg": s:yellow })
 call s:h("WildMenu",    { "bg": s:yellow_dimmed, "fg": s:grey900 })
 
+call s:h("LspDiagnosticsErrorFloating",     { "fg": s:grey500, "gui": "italic" })
+call s:h("LspDiagnosticsError",     { "fg": s:grey500, "gui": "italic" })
+call s:h("LspDiagnosticsWarning",     { "fg": s:grey500, "gui": "italic" })
+
+
 call s:h('User1',     { "fg": s:red })
 call s:h('User2',     { "fg": s:blue })
 call s:h('User3',     { "fg": s:green })
@@ -140,6 +145,9 @@ call s:h("CocInfoSign",    { "fg": s:grey500 })
 call s:h("CocWarningSign", { "fg": s:yellow })
 call s:h("CocErrorSign",   { "fg": s:error })
 
+call s:h('ALEErrorSign', { "fg": s:error })
+call s:h('ALEWarningSign', { "fg": s:yellow })
+
 hi! link typescriptVariable StorageClass
 hi! link typescriptFuncKeyword StorageClass
 hi! link typescriptStatementKeyword Statement
@@ -155,3 +163,4 @@ hi! link htmlArg Noise
 
 hi! link cssTagName StorageClass
 hi! link cssClassName BlueDimmed
+
