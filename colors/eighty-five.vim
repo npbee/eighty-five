@@ -117,9 +117,9 @@ call s:h("Visual",      { "bg": s:grey750 })
 call s:h("WarningMsg",  { "fg": s:grey900, "bg": s:yellow })
 call s:h("WildMenu",    { "bg": s:yellow_dimmed, "fg": s:grey900 })
 
-call s:h("LspDiagnosticsErrorFloating",     { "fg": s:grey500, "gui": "italic" })
-call s:h("LspDiagnosticsError",     { "fg": s:grey500, "gui": "italic" })
-call s:h("LspDiagnosticsWarning",     { "fg": s:grey500, "gui": "italic" })
+call s:h("DiagnosticsErrorFloating",     { "fg": s:grey500, "gui": "italic" })
+call s:h("DiagnosticsError",     { "fg": s:grey500, "gui": "italic" })
+call s:h("DiagnosticsWarning",     { "fg": s:grey500, "gui": "italic" })
 
 
 call s:h('User1',     { "fg": s:red })
