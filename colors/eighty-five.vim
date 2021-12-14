@@ -117,8 +117,11 @@ call s:h("Visual",      { "bg": s:grey750 })
 call s:h("WarningMsg",  { "fg": s:grey900, "bg": s:yellow })
 call s:h("WildMenu",    { "bg": s:yellow_dimmed, "fg": s:grey900 })
 
-call s:h("DiagnosticErrorFloating",     { "fg": s:grey500, "gui": "italic" })
-call s:h("DiagnosticError",     { "fg": s:grey500, "gui": "italic" })
+call s:h("NormalFloat", { "bg": s:bg })
+call s:h("FloatBorder", { "fg": s:fg_dimmed, "bg": s:bg })
+
+call s:h("DiagnosticErrorFloating",     { "fg": s:red_dimmed, "gui": "italic" })
+call s:h("DiagnosticError",     { "fg": s:red_dimmed, "gui": "italic" })
 call s:h("DiagnosticWarning",     { "fg": s:grey500, "gui": "italic" })
 
 
