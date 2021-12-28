@@ -89,7 +89,7 @@ call s:h("Normal",      { "fg": s:fg, "bg": s:bg})
 call s:h("Number",      { "fg": s:purple })
 call s:h("Noise",       { "fg": s:fg_dimmed })
 call s:h("Pmenu",       { "bg": s:grey775 })
-call s:h("NonText",     { "fg": s:grey850 })
+call s:h("NonText",     { "fg": s:grey500 })
 call s:h("PmenuSel",    { "bg": s:grey700 })
 call s:h("PmenuThumb",  { "bg": s:grey700 })
 call s:h("PmenuSbar",   { "bg": s:grey700 })
@@ -120,9 +120,18 @@ call s:h("WildMenu",    { "bg": s:yellow_dimmed, "fg": s:grey900 })
 call s:h("NormalFloat", { "bg": s:bg })
 call s:h("FloatBorder", { "fg": s:fg_dimmed, "bg": s:bg })
 
+call s:h("DiagnosticError",     { "fg": s:red_dimmed })
+call s:h("DiagnosticWarn",     { "fg": s:yellow_washed })
+call s:h("DiagnosticInfo",     { "fg": s:blue_dimmmed })
+call s:h("DiagnosticHint",     { "fg": s:purple })
+
+call s:h("DiagnosticVirtualTextError",     { "fg": s:red_dimmed })
+call s:h("DiagnosticVirtualTextWarn",     { "fg": s:yellow_washed })
+call s:h("DiagnosticVirtualTextInfo",     { "fg": s:blue_dimmmed })
+call s:h("DiagnosticVirtualTextHint",     { "fg": s:purple })
+call s:h("VirtualText",     { "fg": s:purple })
+
 call s:h("DiagnosticErrorFloating",     { "fg": s:red_dimmed, "gui": "italic" })
-call s:h("DiagnosticError",     { "fg": s:red_dimmed, "gui": "italic" })
-call s:h("DiagnosticWarning",     { "fg": s:grey500, "gui": "italic" })
 
 
 call s:h('User1',     { "fg": s:red })
@@ -167,3 +176,6 @@ hi! link htmlArg Noise
 hi! link cssTagName StorageClass
 hi! link cssClassName BlueDimmed
 
+call s:h("GitSignsAdd",     { "fg": s:green })
+call s:h("GitSignsChange",     { "fg": s:blue })
+call s:h("GitSignsDelete",     { "fg": s:red_dimmed })
