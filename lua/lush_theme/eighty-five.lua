@@ -45,6 +45,32 @@
 local lush = require("lush")
 local hsl = lush.hsl
 
+local grey050 = hsl("#ebe8e6")
+local grey100 = hsl("#d5d2d0")
+local grey200 = hsl("#bfbcba")
+local grey300 = hsl("#aaa7a5")
+local grey400 = hsl("#959290")
+local grey500 = hsl("#807e7c")
+local grey600 = hsl("#6c6a68")
+local grey700 = hsl("#595755")
+local grey750 = hsl("#474543")
+local grey775 = hsl("#42403d")
+local grey800 = hsl("#353331")
+local grey850 = hsl("#242220")
+local grey900 = hsl("#141210")
+local fg = hsl("#e4d2a6")
+local teal = hsl("#89C0C1")
+local green = hsl("#93c19a")
+local orange = hsl("#d89a76")
+local purple = hsl("#b98895")
+local blue = hsl("#7e9b8f")
+local blue_dimmmed = hsl("#879891")
+local red = hsl("#e25c5c")
+local red_dimmed = hsl("#c24a4a")
+local yellow = hsl("#d3b471")
+local yellow_dimmed = hsl("#d3ab54")
+local yellow_washed = hsl("#ffd686")
+
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
 ---@diagnostic disable: undefined-global
@@ -62,15 +88,27 @@ local theme = lush(function()
     -- styling for that group (meaning they mostly get styled as Normal)
     -- or leave them commented to apply vims default colouring or linking.
 
-    -- Comment      { }, -- any comment
-    -- ColorColumn  { }, -- used for the columns set with 'colorcolumn'
+    -- Normal {}
+    Normal({ bg = grey800, fg = fg }), -- normal text
+
+    -- Comment {}
+    Comment({ fg = grey500, gui = "italic" }), -- any comment
+
+    -- ColorColumn {}, -- used for the columns set with 'colorcolumn'
+    ColorColumn({ bg = Normal.bg.lighten(5) }),
+
     -- Conceal      { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- character under the cursor
     -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
     -- CursorColumn { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    -- CursorLine   { }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    -- Directory    { }, -- directory names (and other special names in listings)
+
+    -- CursorLine {}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorLine({ bg = Normal.bg.lighten(5) }),
+
+    -- Directory {}, -- directory names (and other special names in listings)
+    Directory({ fg = blue }),
+
     -- DiffAdd      { }, -- diff mode: Added line |diff.txt|
     -- DiffChange   { }, -- diff mode: Changed line |diff.txt|
     -- DiffDelete   { }, -- diff mode: Deleted line |diff.txt|
@@ -78,47 +116,113 @@ local theme = lush(function()
     -- EndOfBuffer  { }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- cursor in a focused terminal
     -- TermCursorNC { }, -- cursor in an unfocused terminal
-    -- ErrorMsg     { }, -- error messages on the command line
+    --
+    -- ErrorMsg {}, -- error messages on the command line
+    ErrorMsg({ bg = red, fg = Normal.fg }),
+
+    -- FloatBorder {}
+    FloatBorder({ bg = Normal.bg, fg = Normal.fg.darken(10) }),
+
     -- VertSplit    { }, -- the column separating vertically split windows
+    VertSplit({ bg = Normal.bg, fg = CursorLine.bg.lighten(15) }),
+
     -- Folded       { }, -- line used for closed folds
+    Folded({ bg = Normal.bg.lighten(10), fg = Normal.fg }),
+
     -- FoldColumn   { }, -- 'foldcolumn'
+    FoldColumn({ Normal }),
+
     -- SignColumn   { }, -- column where |signs| are displayed
+    SignColumn({ Normal }),
+
     -- IncSearch    { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    IncSearch({ bg = yellow_dimmed, fg = Normal.bg.darken(10) }),
+
     -- Substitute   { }, -- |:substitute| replacement text highlighting
+
     -- LineNr       { }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr({ Comment }),
+
     -- CursorLineNr { }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+
     -- MatchParen   { }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen({ fg = purple, gui = "bold" }),
+
     -- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
+    ModeMsg({ fg = green }),
+
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg      { }, -- |more-prompt|
+
     -- NonText      { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    -- Normal       { }, -- normal text
+    NonText({ Comment }),
+
     -- NormalFloat  { }, -- Normal text in floating windows.
+    NormalFloat({ bg = Normal.bg, fg = Normal.fg.darken(3) }),
+
     -- NormalNC     { }, -- normal text in non-current windows
+
     -- Pmenu        { }, -- Popup menu: normal item.
+    Pmenu({ bg = Normal.bg.lighten(10) }),
+
     -- PmenuSel     { }, -- Popup menu: selected item.
+    PmenuSel({ bg = Normal.bg.lighten(25), fg = Normal.fg }),
+
     -- PmenuSbar    { }, -- Popup menu: scrollbar.
+    PmenuSbar({ Pmenu }),
+
     -- PmenuThumb   { }, -- Popup menu: Thumb of the scrollbar.
+    PmenuThumb({ PmenuSel }),
+
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
+    Question({ fg = green }),
+
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+
     -- Search       { }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    Search({ bg = Normal.bg.lighten(10), fg = Normal.fg.desaturate(100) }),
+
     -- SpecialKey   { }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+    SpecialKey({ fg = teal }),
+
     -- SpellBad     { }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+    SpellBad({ fg = red, guisp = red, gui = "undercurl" }),
+
     -- SpellCap     { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     -- SpellLocal   { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare    { }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+
     -- StatusLine   { }, -- status line of current window
+    StatusLine({ bg = Normal.bg, fg = grey500 }), -- status line of current window
+
     -- StatusLineNC { }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    StatusLineNC({ bg = Normal.bg, fg = grey500 }), -- Need separate def to avoid carets
+
     -- TabLine      { }, -- tab pages line, not active tab page label
+    TabLine({ Normal }),
+
     -- TabLineFill  { }, -- tab pages line, where there are no labels
+    TabLineFill({ bg = Normal.bg.lighten(10) }),
+
     -- TabLineSel   { }, -- tab pages line, active tab page label
+    TabLineSel({ fg = green }),
+
     -- Title        { }, -- titles for output from ":set all", ":autocmd" etc.
+    Title({ fg = blue, gui = "bold" }),
+
     -- Visual       { }, -- Visual mode selection
+    Visual({ bg = CursorLine.bg, fg = Normal.fg.rotate(180) }),
+
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
+
     -- WarningMsg   { }, -- warning messages
+    WarningMsg({ bg = yellow, fg = Normal.bg.darken(50) }),
+
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+
     -- WildMenu     { }, -- current match in 'wildmenu' completion
+    WildMenu({ bg = yellow, fg = Normal.bg }),
 
     -- These groups are not listed as default vim groups,
     -- but they are defacto standard group names for syntax highlighting.
@@ -126,17 +230,28 @@ local theme = lush(function()
     -- default,
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    -- Constant       { }, -- (preferred) any constant
+    -- Constant {}
+    Constant({ fg = Normal.fg }), -- (preferred) any constant
+
     -- String         { }, --   a string constant: "this is a string"
+    String({ fg = yellow }),
+
     -- Character      { }, --  a character constant: 'c', '\n'
+    --
     -- Number         { }, --   a number constant: 234, 0xff
+    Number({ fg = purple }),
+
     -- Boolean        { }, --  a boolean constant: TRUE, false
     -- Float          { }, --    a floating point constant: 2.3e10
 
     -- Identifier     { }, -- (preferred) any variable name
+    Identifier({ Normal }),
+
     -- Function       { }, -- function name (also: methods for classes)
 
     -- Statement      { }, -- (preferred) any statement
+    Statement({ Normal }),
+
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --    case, default, etc.
@@ -145,17 +260,25 @@ local theme = lush(function()
     -- Exception      { }, --  try, catch, throw
 
     -- PreProc        { }, -- (preferred) generic Preprocessor
+    PreProc({ fg = blue }),
+
     -- Include        { }, --  preprocessor #include
     -- Define         { }, --   preprocessor #define
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
     -- Type           { }, -- (preferred) int, long, char, etc.
+    Type({ fg = blue }),
+
     -- StorageClass   { }, -- static, register, volatile, etc.
+    StorageClass({ fg = blue }),
+
     -- Structure      { }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
 
     -- Special        { }, -- (preferred) any special symbol
+    Special({ Normal }),
+
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { }, --    you can use CTRL-] on this
     -- Delimiter      { }, --  character that needs attention
@@ -170,8 +293,10 @@ local theme = lush(function()
     -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
     -- Error          { }, -- (preferred) any erroneous construct
+    Error({ bg = red.desaturate(20), fg = Normal.fg.lighten(50) }),
 
     -- Todo           { }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Todo({ fg = yellow, gui = "bold" }),
 
     -- These groups are for the native LSP client. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
@@ -182,9 +307,20 @@ local theme = lush(function()
     -- LspReferenceWrite                    { }, -- used for highlighting "write" references
 
     -- LspDiagnosticsDefaultError           { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultError({ bg = Normal.bg, fg = Error.bg }),
+    DiagnosticError({ LspDiagnosticsDefaultError }),
+
     -- LspDiagnosticsDefaultWarning         { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultWarning({ fg = yellow }),
+    DiagnosticWarn({ LspDiagnosticsDefaultWarning }),
+
     -- LspDiagnosticsDefaultInformation     { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultInformation({ fg = blue }),
+    DiagnosticInfo({ fg = blue }),
+
     -- LspDiagnosticsDefaultHint            { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultHint({ fg = purple }),
+    DiagnosticHint({ LspDiagnosticsDefaultHint }),
 
     -- LspDiagnosticsVirtualTextError       { }, -- Used for "Error" diagnostic virtual text
     -- LspDiagnosticsVirtualTextWarning     { }, -- Used for "Warning" diagnostic virtual text
@@ -207,6 +343,69 @@ local theme = lush(function()
     -- LspDiagnosticsSignHint               { }, -- Used for "Hint" signs in sign column
 
     -- LspCodeLens                          { }, -- Used to color the virtual text of the codelens
+
+    -- User -------------------------------------------------------------------
+
+    -- User1 {}
+    User1({ fg = red }),
+
+    -- User2 {}
+    User2({ fg = blue }),
+
+    -- User3 {}
+    User3({ fg = green }),
+
+    -- User4 {}
+    User4({ fg = purple }),
+
+    -- User5 {}
+    User5({ fg = yellow }),
+
+    -- User6 {}
+    User6({ fg = orange }),
+
+    -- BlueDimmed",{ "fg": s:blue_dimmmed })
+
+    -- Plugins ----------------------------------------------------------------
+
+    -- jsImport {}, import
+    jsImport({ StorageClass }),
+
+    -- jsExport {}, export
+    jsExport({ StorageClass }),
+
+    -- jsBuiltinValues { StorageClass }
+    jsBuiltinValues({ StorageClass }),
+
+    -- jsFunction { StorageClass },
+    jsFunction({ StorageClass }),
+
+    -- typescriptImport{ StorageClass },
+    typescriptImport({ StorageClass }),
+
+    -- typescriptExport{ StorageClass },
+    typescriptExport({ StorageClass }),
+
+    -- typescriptVariable{ StorageClass },
+    typescriptVariable({ StorageClass }),
+
+    -- typescriptFuncKeyword{ StorageClass },
+    typescriptFuncKeyword({ StorageClass }),
+
+    -- typescriptStatementKeyword{ StorageClass },
+    typescriptStatementKeyword({ StorageClass }),
+
+    --typescriptBoolean{ StorageClass },
+    typescriptBoolean({ StorageClass }),
+
+    -- typescriptGlobal{ StorageClass },
+    typescriptGlobal({ StorageClass }),
+
+    -- cssTagName{ StorageClass },
+    cssTagName({ StorageClass }),
+
+    -- cssClassName{ fg = StorageClass.fg.darken(10) },
+    cssClassName({ fg = StorageClass.fg.darken(10) }),
 
     -- These groups are for the neovim tree-sitter highlights.
     -- As of writing, tree-sitter support is a WIP, group names may change.

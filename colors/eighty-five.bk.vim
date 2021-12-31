@@ -65,65 +65,65 @@ function! s:h(group, style)
 endfunction
 
 " A comment
-call s:h("ColorColumn", { "bg": s:grey775 })
-call s:h("Comment",     { "fg": s:grey500, "gui": "italic" })
-call s:h("Constant",    { "fg": s:fg })
-call s:h("CursorLine",  { "bg": s:grey775 })
+" call s:h("ColorColumn", { "bg": s:grey775 })
+" call s:h("Comment",     { "fg": s:grey500, "gui": "italic" })
+" call s:h("Constant",    { "fg": s:fg })
+" call s:h("CursorLine",  { "bg": s:grey775 })
 call s:h("CursorLineNr",{ "fg": s:yellow_washed })
 call s:h("DiffAdd",     { "bg": s:green, "fg": s:grey900 })
 call s:h("DiffChange",  { "bg": s:blue, "fg": s:grey900 })
 call s:h("DiffDelete",  { "bg": s:red, "fg": s:grey900 })
 call s:h("DiffText",    { "bg": s:yellow, "fg": s:grey900 })
-call s:h("Directory",   { "fg": s:blue })
+" call s:h("Directory",   { "fg": s:blue })
 call s:h("EndOfBuffer", { "fg": s:bg, "bg": s:bg })
-call s:h("Error",       { "bg": s:red_dimmed, "fg": s:fg })
-call s:h("ErrorMsg",    { "bg": s:red_dimmed, "fg": s:fg })
-call s:h("Folded",      { "bg": s:grey750, "fg": s:fg })
-call s:h("FoldColumn",  { "bg": s:bg, "fg": s:fg })
-call s:h("Identifier",  { "fg": s:fg })
-call s:h("IncSearch",   { "fg": s:grey900, "bg": s:yellow_dimmed })
-call s:h("LineNr",      { "bg": s:bg, "fg": s:grey600 })
-call s:h("MatchParen",  { "bg": s:grey775,  "gui": "bold" })
-call s:h("MoreMsg",     { "fg": s:green })
-call s:h("Normal",      { "fg": s:fg, "bg": s:bg})
-call s:h("Number",      { "fg": s:purple })
+" call s:h("Error",       { "bg": s:red_dimmed, "fg": s:fg })
+" call s:h("ErrorMsg",    { "bg": s:red_dimmed, "fg": s:fg })
+" call s:h("Folded",      { "bg": s:grey750, "fg": s:fg })
+" call s:h("FoldColumn",  { "bg": s:bg, "fg": s:fg })
+" call s:h("Identifier",  { "fg": s:fg })
+" call s:h("IncSearch",   { "fg": s:grey900, "bg": s:yellow_dimmed })
+" call s:h("LineNr",      { "bg": s:bg, "fg": s:grey600 })
+" call s:h("MatchParen",  { "bg": s:grey775,  "gui": "bold" })
+" call s:h("MoreMsg",     { "fg": s:green })
+" call s:h("Normal",      { "fg": s:fg, "bg": s:bg})
+" call s:h("Number",      { "fg": s:purple })
 call s:h("Noise",       { "fg": s:fg_dimmed })
-call s:h("Pmenu",       { "bg": s:grey775 })
-call s:h("NonText",     { "fg": s:grey500 })
-call s:h("PmenuSel",    { "bg": s:grey700 })
-call s:h("PmenuThumb",  { "bg": s:grey700 })
-call s:h("PmenuSbar",   { "bg": s:grey700 })
+" call s:h("Pmenu",       { "bg": s:grey775 })
+" call s:h("NonText",     { "fg": s:grey500 })
+" call s:h("PmenuSel",    { "bg": s:grey700 })
+" call s:h("PmenuThumb",  { "bg": s:grey700 })
+" call s:h("PmenuSbar",   { "bg": s:grey700 })
 call s:h("PreProc",     { "fg": s:fg })
-call s:h("Question",    { "fg": s:green })
-call s:h("Search",      { "fg": s:fg_dimmed, "bg": s:grey700 })
-call s:h("SignColumn",  { "bg": s:bg })
-call s:h("Special",     { "fg": s:fg })
-call s:h("SpellBad",    { "gui": "undercurl", "guisp": s:red, "fg": s:red })
+" call s:h("Question",    { "fg": s:green })
+" call s:h("Search",      { "fg": s:fg_dimmed, "bg": s:grey700 })
+" call s:h("SignColumn",  { "bg": s:bg })
+" call s:h("Special",     { "fg": s:fg })
+" call s:h("SpellBad",    { "gui": "undercurl", "guisp": s:red, "fg": s:red })
 call s:h("SpecialKey",  { "fg": s:teal })
-call s:h("Statement",   { "fg": s:fg })
-call s:h("StatusLine",  { "bg": s:bg, "fg": s:grey500 })
-call s:h("StatusLineNC",{ "bg": s:bg, "fg": s:grey500 })
-call s:h("StorageClass",{ "fg": s:blue })
-call s:h("String",      { "fg": s:yellow })
-call s:h("TabLine",     { "bg": s:bg })
-call s:h("TabLineFill", { "bg": s:grey775 })
-call s:h("TabLineSel",  { "fg": s:green })
-call s:h("Title",       { "fg": s:blue, "gui": "bold" })
-call s:h("Todo",        { "fg": s:yellow, "gui": "bold" })
-call s:h("Type",        { "fg": s:blue })
+" call s:h("Statement",   { "fg": s:fg })
+" call s:h("StatusLine",  { "bg": s:bg, "fg": s:grey500 })
+" call s:h("StatusLineNC",{ "bg": s:bg, "fg": s:grey500 })
+" call s:h("StorageClass",{ "fg": s:blue })
+" call s:h("String",      { "fg": s:yellow })
+" call s:h("TabLine",     { "bg": s:bg })
+" call s:h("TabLineFill", { "bg": s:grey775 })
+" call s:h("TabLineSel",  { "fg": s:green })
+" call s:h("Title",       { "fg": s:blue, "gui": "bold" })
+" call s:h("Todo",        { "fg": s:yellow, "gui": "bold" })
+" call s:h("Type",        { "fg": s:blue })
 call s:h("Underlined",  { "fg": s:blue })
-call s:h("VertSplit",   { "bg": s:bg, "fg": s:grey700 })
-call s:h("Visual",      { "bg": s:grey750 })
-call s:h("WarningMsg",  { "fg": s:grey900, "bg": s:yellow })
-call s:h("WildMenu",    { "bg": s:yellow_dimmed, "fg": s:grey900 })
+" call s:h("VertSplit",   { "bg": s:bg, "fg": s:grey700 })
+" call s:h("Visual",      { "bg": s:grey750 })
+" call s:h("WarningMsg",  { "fg": s:grey900, "bg": s:yellow })
+" call s:h("WildMenu",    { "bg": s:yellow_dimmed, "fg": s:grey900 })
 
-call s:h("NormalFloat", { "bg": s:bg })
-call s:h("FloatBorder", { "fg": s:fg_dimmed, "bg": s:bg })
+" call s:h("NormalFloat", { "bg": s:bg })
+" call s:h("FloatBorder", { "fg": s:fg_dimmed, "bg": s:bg })
 
-call s:h("DiagnosticError",     { "fg": s:red_dimmed })
-call s:h("DiagnosticWarn",     { "fg": s:yellow_washed })
-call s:h("DiagnosticInfo",     { "fg": s:blue_dimmmed })
-call s:h("DiagnosticHint",     { "fg": s:purple })
+" call s:h("DiagnosticError",     { "fg": s:red_dimmed })
+" call s:h("DiagnosticWarn",     { "fg": s:yellow_washed })
+" call s:h("DiagnosticInfo",     { "fg": s:blue_dimmmed })
+" call s:h("DiagnosticHint",     { "fg": s:purple })
 
 call s:h("DiagnosticVirtualTextError",     { "fg": s:red_dimmed })
 call s:h("DiagnosticVirtualTextWarn",     { "fg": s:yellow_washed })
@@ -134,21 +134,21 @@ call s:h("VirtualText",     { "fg": s:purple })
 call s:h("DiagnosticErrorFloating",     { "fg": s:red_dimmed, "gui": "italic" })
 
 
-call s:h('User1',     { "fg": s:red })
-call s:h('User2',     { "fg": s:blue })
-call s:h('User3',     { "fg": s:green })
-call s:h('User4',     { "fg": s:purple })
-call s:h('User5',     { "fg": s:yellow })
-call s:h('User6',     { "fg": s:orange })
+" call s:h('User1',     { "fg": s:red })
+" call s:h('User2',     { "fg": s:blue })
+" call s:h('User3',     { "fg": s:green })
+" call s:h('User4',     { "fg": s:purple })
+" call s:h('User5',     { "fg": s:yellow })
+" call s:h('User6',     { "fg": s:orange })
 call s:h("BlueDimmed",{ "fg": s:blue_dimmmed })
 
 call s:h("jsxTag",            { "fg": s:fg })
 call s:h("jsxEndTag",         { "fg": s:fg })
 call s:h("jsReturn",          { "fg": s:orange })
-hi! link jsImport StorageClass
-hi! link jsExport StorageClass
-hi! link jsBuiltinValues StorageClass
-hi! link jsFunction StorageClass
+" hi! link jsImport StorageClass
+" hi! link jsExport StorageClass
+" hi! link jsBuiltinValues StorageClass
+" hi! link jsFunction StorageClass
 hi! link jsTemplateBrace BlueDimmed
 
 hi! link elixirModuleDefine StorageClass
@@ -160,21 +160,21 @@ call s:h("CocErrorSign",   { "fg": s:error })
 call s:h('ALEErrorSign', { "fg": s:error })
 call s:h('ALEWarningSign', { "fg": s:yellow })
 
-hi! link typescriptVariable StorageClass
-hi! link typescriptFuncKeyword StorageClass
-hi! link typescriptStatementKeyword Statement
-hi! link typescriptBoolean StorageClass
-hi! link typescriptGlobal StorageClass
-hi! link typescriptReserved StorageClass
-hi! link typescriptImport StorageClass
-hi! link typescriptExport StorageClass
-hi! link typescriptStatementKeyword jsReturn
+" hi! link typescriptVariable StorageClass
+" hi! link typescriptFuncKeyword StorageClass
+" hi! link typescriptStatementKeyword Statement
+" hi! link typescriptBoolean StorageClass
+" hi! link typescriptGlobal StorageClass
+" hi! link typescriptReserved StorageClass
+" hi! link typescriptImport StorageClass
+" hi! link typescriptExport StorageClass
+" hi! link typescriptStatementKeyword jsReturn
 
 hi! link htmlTagName StorageClass
 hi! link htmlArg Noise
 
-hi! link cssTagName StorageClass
-hi! link cssClassName BlueDimmed
+" hi! link cssTagName StorageClass
+" hi! link cssClassName BlueDimmed
 
 call s:h("GitSignsAdd",     { "fg": s:green })
 call s:h("GitSignsChange",     { "fg": s:blue })
