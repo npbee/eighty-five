@@ -75,7 +75,7 @@ call s:h("DiffChange",  { "bg": s:blue, "fg": s:grey900 })
 call s:h("DiffDelete",  { "bg": s:red, "fg": s:grey900 })
 call s:h("DiffText",    { "bg": s:yellow, "fg": s:grey900 })
 " call s:h("Directory",   { "fg": s:blue })
-call s:h("EndOfBuffer", { "fg": s:bg, "bg": s:bg })
+" call s:h("EndOfBuffer", { "fg": s:bg, "bg": s:bg })
 " call s:h("Error",       { "bg": s:red_dimmed, "fg": s:fg })
 " call s:h("ErrorMsg",    { "bg": s:red_dimmed, "fg": s:fg })
 " call s:h("Folded",      { "bg": s:grey750, "fg": s:fg })
@@ -144,7 +144,7 @@ call s:h("BlueDimmed",{ "fg": s:blue_dimmmed })
 
 call s:h("jsxTag",            { "fg": s:fg })
 call s:h("jsxEndTag",         { "fg": s:fg })
-call s:h("jsReturn",          { "fg": s:orange })
+" call s:h("jsReturn",          { "fg": s:orange })
 " hi! link jsImport StorageClass
 " hi! link jsExport StorageClass
 " hi! link jsBuiltinValues StorageClass
