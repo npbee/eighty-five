@@ -250,7 +250,8 @@ local theme = lush(function()
     -- Identifier     { }, -- (preferred) any variable name
     Identifier({ Normal }),
 
-    -- Function       { }, -- function name (also: methods for classes)
+    -- Function {}, -- function name (also: methods for classes)
+    Function({ fg = orange.desaturate(15) }),
 
     -- Statement      { }, -- (preferred) any statement
     Statement({ Normal }),
@@ -437,15 +438,20 @@ local theme = lush(function()
     -- TSFuncBuiltin        { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro          { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     -- TSInclude            { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    -- TSKeyword            { };    -- For keywords that don't fall in previous categories.
-    -- TSKeywordFunction    { };    -- For keywords used to define a fuction.
+
+    -- TSKeyword            { }; -- For keywords that don't fall in previous categories. Ex: const
+    TSKeyword({ StorageClass }),
+
+    -- TSKeywordFunction    {},     -- For keywords used to define a fuction.
+    TSKeywordFunction({ StorageClass }),
     -- TSLabel              { };    -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod             { };    -- For method calls and definitions.
     -- TSNamespace          { };    -- For identifiers referring to modules and namespaces.
     -- TSNone               { };    -- TODO: docs
     -- TSNumber             { };    -- For all numbers
     -- TSOperator           { };    -- For any operator: `+`, but also `->` and `*` in C.
-    -- TSParameter          { };    -- For parameters of a function.
+    -- TSParameter          {},    -- For parameters of a function.
+
     -- TSParameterReference { };    -- For references to parameters of a function.
     -- TSProperty           { };    -- Same as `TSField`.
     -- TSPunctDelimiter     { };    -- For delimiters ie: `.`
@@ -459,6 +465,7 @@ local theme = lush(function()
     -- TSType               { };    -- For types.
     -- TSTypeBuiltin        { };    -- For builtin types.
     -- TSVariable           { };    -- Any variable name that does not have another highlight.
+    -- TSVariableBuiltin    { };    -- Variable names that are defined by the languages, like `this` or `self`.
     -- TSVariableBuiltin    { };    -- Variable names that are defined by the languages, like `this` or `self`.
 
     -- TSTag                { };    -- Tags like html tag names.
