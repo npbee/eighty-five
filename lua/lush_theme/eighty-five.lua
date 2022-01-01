@@ -60,7 +60,7 @@ local grey850 = hsl("#242220")
 local grey900 = hsl("#141210")
 local fg = hsl("#e4d2a6")
 local teal = hsl("#89C0C1")
-local green = hsl("#93c19a")
+local green = hsl(120, 30, 57)
 local orange = hsl("#d89a76")
 local purple = hsl("#b98895")
 local blue = hsl("#7e9b8f")
@@ -121,7 +121,7 @@ local theme = lush(function()
     -- TermCursorNC { }, -- cursor in an unfocused terminal
     --
     -- ErrorMsg {}, -- error messages on the command line
-    ErrorMsg({ bg = red, fg = Normal.fg }),
+    ErrorMsg({ bg = Normal.bg, fg = red, gui = "bold" }),
 
     -- FloatBorder {}
     FloatBorder({ bg = Normal.bg, fg = Normal.fg.darken(10) }),
@@ -156,7 +156,9 @@ local theme = lush(function()
 
     -- MsgArea      { }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
+
     -- MoreMsg      { }, -- |more-prompt|
+    MoreMsg({ fg = green, gui = "bold" }), -- |more-prompt|
 
     -- NonText      { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     NonText({ Comment }),
@@ -179,7 +181,7 @@ local theme = lush(function()
     PmenuThumb({ PmenuSel }),
 
     -- Question     { }, -- |hit-enter| prompt and yes/no questions
-    Question({ fg = green }),
+    Question({ fg = green, gui = "bold" }),
 
     -- QuickFixLine { }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 
@@ -215,7 +217,7 @@ local theme = lush(function()
     Title({ fg = blue, gui = "bold" }),
 
     -- Visual       { }, -- Visual mode selection
-    Visual({ bg = CursorLine.bg, fg = Normal.fg.rotate(180) }),
+    Visual({ bg = CursorLine.bg.lighten(5), fg = Normal.fg }),
 
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
 
@@ -251,7 +253,7 @@ local theme = lush(function()
     Identifier({ Normal }),
 
     -- Function {}, -- function name (also: methods for classes)
-    Function({ fg = orange.desaturate(15) }),
+    Function({ fg = blue }),
 
     -- Statement      { }, -- (preferred) any statement
     Statement({ Normal }),
@@ -297,7 +299,7 @@ local theme = lush(function()
     -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
     -- Error          { }, -- (preferred) any erroneous construct
-    Error({ bg = red.desaturate(20), fg = Normal.fg.lighten(50) }),
+    Error({ bg = Normal.bg, fg = red, gui = "bold" }),
 
     -- Todo           { }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
     Todo({ fg = yellow, gui = "bold" }),
@@ -311,7 +313,7 @@ local theme = lush(function()
     -- LspReferenceWrite                    { }, -- used for highlighting "write" references
 
     -- LspDiagnosticsDefaultError           { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultError({ bg = Normal.bg, fg = Error.bg }),
+    LspDiagnosticsDefaultError({ bg = Normal.bg, fg = Error.fg }),
     DiagnosticError({ LspDiagnosticsDefaultError }),
 
     -- LspDiagnosticsDefaultWarning         { }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
@@ -387,32 +389,72 @@ local theme = lush(function()
     -- jsReturn { },
     jsReturn({ fg = orange }),
 
-    -- typescriptImport{ StorageClass },
+    -- typescriptImport{},
     typescriptImport({ StorageClass }),
 
-    -- typescriptExport{ StorageClass },
+    -- typescriptExport{},
     typescriptExport({ StorageClass }),
 
-    -- typescriptVariable{ StorageClass },
+    -- typescriptVariable{},
     typescriptVariable({ StorageClass }),
 
-    -- typescriptFuncKeyword{ StorageClass },
+    -- typescriptFuncKeyword{},
     typescriptFuncKeyword({ StorageClass }),
 
-    -- typescriptStatementKeyword{ StorageClass },
+    -- typescriptStatementKeyword{},
     typescriptStatementKeyword({ StorageClass }),
 
-    --typescriptBoolean{ StorageClass },
+    --typescriptBoolean{},
     typescriptBoolean({ StorageClass }),
 
-    -- typescriptGlobal{ StorageClass },
+    -- typescriptGlobal{},
     typescriptGlobal({ StorageClass }),
 
-    -- cssTagName{ StorageClass },
+    -- cssTagName{},
     cssTagName({ StorageClass }),
 
-    -- cssClassName{ fg = StorageClass.fg.darken(10) },
+    -- cssClassName{},
     cssClassName({ fg = StorageClass.fg.darken(10) }),
+
+    -- nvim-cmp ---------------------------------------------------------------
+    --     CmpDocumentation = { fg = c.fg, bg = c.bg_float },
+    -- CmpDocumentationBorder = { fg = c.border_highlight, bg = c.bg_float },
+
+    -- CmpItemAbbr = { fg = c.fg, bg = c.none },
+    -- CmpItemAbbrDeprecated = { fg = c.fg_gutter, bg = c.none, style = "strikethrough" },
+    -- CmpItemAbbrMatch = { fg = c.blue1, bg = c.none },
+    -- CmpItemAbbrMatchFuzzy = { fg = c.blue1, bg = c.none },
+
+    -- CmpItemKindDefault {},
+    CmpItemKindDefault({ fg = Normal.fg.desaturate(50) }),
+    -- CmpItemMenu = { fg = c.comment, bg = c.none },
+
+    -- CmpItemKindKeyword = { fg = c.cyan, bg = c.none },
+
+    -- CmpItemKindVariable = { fg = c.magenta, bg = c.none },
+    -- CmpItemKindConstant = { fg = c.magenta, bg = c.none },
+    -- CmpItemKindReference = { fg = c.magenta, bg = c.none },
+    -- CmpItemKindValue = { fg = c.magenta, bg = c.none },
+
+    -- CmpItemKindFunction = { fg = c.blue, bg = c.none },
+    -- CmpItemKindMethod = { fg = c.blue, bg = c.none },
+    -- CmpItemKindConstructor = { fg = c.blue, bg = c.none },
+
+    -- CmpItemKindClass = { fg = c.orange, bg = c.none },
+    -- CmpItemKindInterface = { fg = c.orange, bg = c.none },
+    -- CmpItemKindStruct = { fg = c.orange, bg = c.none },
+    -- CmpItemKindEvent = { fg = c.orange, bg = c.none },
+    -- CmpItemKindEnum = { fg = c.orange, bg = c.none },
+    -- CmpItemKindUnit = { fg = c.orange, bg = c.none },
+
+    -- CmpItemKindModule = { fg = c.yellow, bg = c.none },
+
+    -- CmpItemKindProperty = { fg = c.green1, bg = c.none },
+    -- CmpItemKindField = { fg = c.green1, bg = c.none },
+    -- CmpItemKindTypeParameter = { fg = c.green1, bg = c.none },
+    -- CmpItemKindEnumMember = { fg = c.green1, bg = c.none },
+    -- CmpItemKindOperator = { fg = c.green1, bg = c.none },
+    -- CmpItemKindSnippet = { fg = c.dark5, bg = c.none },
 
     -- These groups are for the neovim tree-sitter highlights.
     -- As of writing, tree-sitter support is a WIP, group names may change.
@@ -425,7 +467,9 @@ local theme = lush(function()
     -- TSBoolean            { };    -- For booleans.
     -- TSCharacter          { };    -- For characters.
     -- TSComment            { };    -- For comment blocks.
+
     -- TSConstructor        { };    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+
     -- TSConditional        { };    -- For keywords related to conditionnals.
     -- TSConstant           { };    -- For constants
     -- TSConstBuiltin       { };    -- For constant that are built in the language: `nil` in Lua.
@@ -434,7 +478,10 @@ local theme = lush(function()
     -- TSException          { };    -- For exception related keywords.
     -- TSField              { };    -- For fields.
     -- TSFloat              { };    -- For floats.
+
     -- TSFunction           { };    -- For function (calls and definitions).
+    TSFunction({ fg = Normal.fg.mix(purple, 70) }), -- For function (calls and definitions).
+
     -- TSFuncBuiltin        { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro          { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     -- TSInclude            { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
@@ -442,10 +489,17 @@ local theme = lush(function()
     -- TSKeyword            { }; -- For keywords that don't fall in previous categories. Ex: const
     TSKeyword({ StorageClass }),
 
-    -- TSKeywordFunction    {},     -- For keywords used to define a fuction.
+    -- TSKeywordFunction {},
     TSKeywordFunction({ StorageClass }),
+
+    -- TSKeywordReturn {},
+    TSKeywordReturn({ fg = orange }),
+
     -- TSLabel              { };    -- For labels: `label:` in C and `:label:` in Lua.
-    -- TSMethod             { };    -- For method calls and definitions.
+
+    -- TSMethod {}, -- For method calls and definitions.
+    TSMethod({ TSFunction }),
+
     -- TSNamespace          { };    -- For identifiers referring to modules and namespaces.
     -- TSNone               { };    -- TODO: docs
     -- TSNumber             { };    -- For all numbers
@@ -469,6 +523,10 @@ local theme = lush(function()
     -- TSVariableBuiltin    { };    -- Variable names that are defined by the languages, like `this` or `self`.
 
     -- TSTag                { };    -- Tags like html tag names.
+
+    -- TSTagAttribute { };    -- Tags like html tag names.
+    TSTagAttribute({ fg = blue }),
+
     -- TSTagDelimiter       { };    -- Tag delimiter like `<` `>` `/`
     -- TSText               { };    -- For strings considered text in a markup language.
     -- TSEmphasis           { };    -- For text to be represented with emphasis.
