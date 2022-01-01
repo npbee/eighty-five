@@ -4,19 +4,19 @@ const constNumber = 20;
 const bool: boolean = true;
 const list: number[] = [1, 2, 3];
 const array: Array<number> = [1, 2, 3];
-const pair: [string, number] = ['hello', 10];
+const pair: [string, number] = ["hello", 10];
 
 for (let i = 0; i < list.length; i += 1) {
   console.log(list[i]);
 }
 
 if (bool) {
-  console.log('True');
+  console.log("True");
 } else {
-  console.log('False');
+  console.log("False");
 }
 
-const str: string = 'Jake';
+const str: string = "Jake";
 const templateStr: string = `Hello, ${str}!`;
 
 // A comment
@@ -95,8 +95,8 @@ let myAdd = function (x, y) {
 };
 
 (function () {
-  console.log('IIFE');
-}());
+  console.log("IIFE");
+})();
 
 function identity<T>(arg: T): T {
   return arg;
