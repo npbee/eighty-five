@@ -30,6 +30,7 @@ export const App = () => {
         onNameUpdated={setUsernameState}
         onEditingNameUpdated={setEditingName}
       />
+      <div>Hi</div>
     </>
   );
 };

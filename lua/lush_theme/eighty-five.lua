@@ -65,6 +65,7 @@ local bg = grey800
 local bg_light = bg.lighten(5)
 local error = red
 local accent = blue
+local accent_light = text.mix(accent, 80)
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
@@ -166,7 +167,7 @@ local theme = lush(function()
     -- CursorLineNr { }, 
 
     -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-    MatchParen      { gui = "bold" }, 
+    MatchParen      { fg = orange, gui = "bold" }, 
 
     Noise           { fg = grey400 },
 
@@ -280,8 +281,8 @@ local theme = lush(function()
     Function        { fg = text },    -- function name (also: methods for classes)
 
     Statement       { Normal },       -- (preferred) any statement
-    -- Conditional    { },            --  if, then, else, endif, switch, etc.
-    -- Repeat         { },            --   for, do, while, etc.
+    Conditional     { fg = orange },            --  if, then, else, endif, switch, etc.
+    Repeat          { fg = accent },            --   for, do, while, etc.
     -- Label          { },            --    case, default, etc.
     -- Operator       { },            -- "sizeof", "+", "*", etc.
     -- Keyword         { fg = accent },  --  any other keyword,  Keyword {}
@@ -369,6 +370,12 @@ local theme = lush(function()
 
     -- Lang -------------------------------------------------------------------
 
+    -- diff -------------------------------------------------------------------
+
+    diffAdded   { DiffAdd },
+    diffChanged   { DiffChange },
+    diffRemoved   { DiffDelete },
+
     -- JS / TS ----------------------------------------------------------------
 
     -- jsImport                   { StorageClass },
@@ -386,7 +393,7 @@ local theme = lush(function()
     -- typescriptGlobal           { StorageClass },
     typescriptBOMWindowMethod     { fg = purple },
     jsxComponentName              { fg = text },
-    jsxAttrib                     { fg = text.mix(accent, 80) },
+    jsxAttrib                     { fg = accent_light },
 
     -- CSS --------------------------------------------------------------------
 
@@ -404,6 +411,7 @@ local theme = lush(function()
     -- Lua -------------------------------------------------------------------
 
     luaLocal    { StorageClass },
+    luaRepeat    { StorageClass },
 
     -- Markdown ---------------------------------------------------------------
 
@@ -421,6 +429,10 @@ local theme = lush(function()
     htmlH6  { fg = accent },
     markdownHeading  { fg = accent },
 
+    -- HTML -------------------------------------------------------------------
+
+    htmlArg   { fg = accent_light },
+    htmlTagName   { fg = text_dim },
 
     -- Plugins ----------------------------------------------------------------
 
@@ -431,10 +443,10 @@ local theme = lush(function()
 
     -- CmpItemAbbr = { fg = c.fg, bg = c.none },
     -- CmpItemAbbrDeprecated = { fg = c.fg_gutter, bg = c.none, style = "strikethrough" },
-    -- CmpItemAbbrMatch = { fg = c.blue1, bg = c.none },
+    CmpItemAbbrMatch            { fg = green, bg = "NONE" },
     -- CmpItemAbbrMatchFuzzy = { fg = c.blue1, bg = c.none },
 
-    CmpItemKindDefault        { fg = Normal.fg.desaturate(50) },
+    CmpItemKindDefault        { fg = text_dim },
     -- CmpItemMenu = { fg = c.comment, bg = c.none },
 
     -- CmpItemKindKeyword = { fg = c.cyan, bg = c.none },
@@ -476,7 +488,7 @@ local theme = lush(function()
     -- TSCharacter          { };    -- For characters.
     -- TSComment            { };    -- For comment blocks.
     -- TSConstructor        { };    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
-    -- TSConditional        { };    -- For keywords related to conditionnals.
+    TSConditional           { fg = orange };    -- For keywords related to conditionnals.
     -- TSConstant           { };    -- For constants
     -- TSConstBuiltin       { };    -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro         { };    -- For constants that are defined by macros: `NULL` in C.
@@ -488,8 +500,8 @@ local theme = lush(function()
     -- TSFuncBuiltin        { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro          { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     -- TSInclude            { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    -- TSKeyword            { StorageClass },-- For keywords that don't fall in previous categories. Ex: const
-    -- TSKeywordFunction    { StorageClass },
+    TSKeyword               { StorageClass },-- For keywords that don't fall in previous categories. Ex: const
+    TSKeywordFunction       { StorageClass },
     TSKeywordReturn         { fg = orange },
     -- TSLabel              { };    -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod             { TSFunction },-- For method calls and definitions.
