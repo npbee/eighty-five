@@ -110,7 +110,7 @@ local theme = lush(function()
     -- CursorColumn { },
 
     -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    CursorLine      { Normal },
+    CursorLine      { bg = bg_light },
 
     -- directory names (and other special names in listings)
     Directory       { fg = accent },
@@ -443,7 +443,7 @@ local theme = lush(function()
 
     -- CmpItemAbbr = { fg = c.fg, bg = c.none },
     -- CmpItemAbbrDeprecated = { fg = c.fg_gutter, bg = c.none, style = "strikethrough" },
-    CmpItemAbbrMatch            { fg = green, bg = "NONE" },
+    CmpItemAbbrMatch            { fg = text, bg = "NONE", gui = "bold" },
     -- CmpItemAbbrMatchFuzzy = { fg = c.blue1, bg = c.none },
 
     CmpItemKindDefault        { fg = text_dim },
