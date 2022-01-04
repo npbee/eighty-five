@@ -387,7 +387,7 @@ local theme = lush(function()
     typescriptImport              { StorageClass },
     typescriptExport              { StorageClass },
     typescriptVariable            { StorageClass },
-    -- typescriptFuncKeyword      { StorageClass },
+    typescriptFuncKeyword      { StorageClass },
     -- typescriptStatementKeyword { StorageClass },
     -- typescriptBoolean          { StorageClass },
     -- typescriptGlobal           { StorageClass },
@@ -446,10 +446,10 @@ local theme = lush(function()
     CmpItemAbbrMatch            { fg = text, bg = "NONE", gui = "bold" },
     -- CmpItemAbbrMatchFuzzy = { fg = c.blue1, bg = c.none },
 
-    CmpItemKindDefault        { fg = text_dim },
+    CmpItemKindDefault        { fg = teal },
     -- CmpItemMenu = { fg = c.comment, bg = c.none },
 
-    -- CmpItemKindKeyword = { fg = c.cyan, bg = c.none },
+    CmpItemKindKeyword        { fg = teal, bg = "NONE" },
 
     -- CmpItemKindVariable = { fg = c.magenta, bg = c.none },
     -- CmpItemKindConstant = { fg = c.magenta, bg = c.none },
