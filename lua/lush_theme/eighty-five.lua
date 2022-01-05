@@ -499,7 +499,7 @@ local theme = lush(function()
     -- TSFunction           { fg = Normal.fg.mix(purple, 70) }, -- For function (calls and definitions).
     -- TSFuncBuiltin        { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro          { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    -- TSInclude            { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    TSInclude               { fg = accent };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     TSKeyword               { StorageClass },-- For keywords that don't fall in previous categories. Ex: const
     TSKeywordFunction       { StorageClass },
     TSKeywordReturn         { fg = orange },
