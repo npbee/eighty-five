@@ -52,7 +52,7 @@ local grey700 = hsl(30, 4, 25)
 local grey800 = hsl(30, 4, 20)
 
 local teal = hsl("#89C0C1")
-local green = hsl(120, 30, 57)
+local green = hsl("#7DA76B")
 local orange = hsl("#d89a76")
 local purple = hsl("#b98895")
 local blue = hsl("#7e9b8f")
