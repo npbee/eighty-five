@@ -435,6 +435,11 @@ local theme = lush(function()
     htmlTagName   { fg = text_dim },
 
     -- Plugins ----------------------------------------------------------------
+    
+    -- Packer -----------------------------------------------------------------
+    packerStatusSuccess { fg = green, gui = 'bold' },
+    packerOutput        { gui = 'bold' },
+    packerHash          { fg = accent },
 
     -- nvim-cmp ---------------------------------------------------------------
 
