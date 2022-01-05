@@ -392,7 +392,7 @@ local theme = lush(function()
     -- typescriptBoolean          { StorageClass },
     -- typescriptGlobal           { StorageClass },
     typescriptBOMWindowMethod     { fg = purple },
-    jsxComponentName              { fg = text },
+    jsxComponentName              { fg = text_dim },
     jsxAttrib                     { fg = accent_light },
 
     -- CSS --------------------------------------------------------------------
@@ -525,8 +525,8 @@ local theme = lush(function()
     -- TSVariable           { };    -- Any variable name that does not have another highlight.
     TSVariableBuiltin       { fg = text_dim }, -- Variable names that are defined by the languages, like `this` or `self`.
 
-    -- TSTag                { };    -- Tags like html tag names.
-    -- TSTagAttribute       { fg = accent },-- Tags like html tag names.
+    TSTag                   { fg = text_dim };    -- Tags like html tag names.
+    TSTagAttribute          { fg = accent_light },-- Tags like html tag names.
     -- TSTagDelimiter       { };    -- Tag delimiter like `<` `>` `/`
     -- TSText               { };    -- For strings considered text in a markup language.
     -- TSEmphasis           { };    -- For text to be represented with emphasis.
