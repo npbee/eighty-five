@@ -181,7 +181,7 @@ local theme = lush(function()
     -- MsgSeparator { }, 
 
     -- |more-prompt|
-    -- MoreMsg      { fg = green, gui = "bold" }, 
+    MoreMsg      { fg = green, gui = "bold" }, 
 
     -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     NonText         { Comment },
