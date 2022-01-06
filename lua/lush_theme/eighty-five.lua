@@ -314,7 +314,7 @@ local theme = lush(function()
     -- Ignore         { },            -- (preferred) left blank, hidden  |hl-Ignore|
 
     Error           { fg = error },   -- (preferred) any erroneous construct
-    Todo            { Normal },       -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Todo            { fg = yellow, gui = 'bold' },       -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
