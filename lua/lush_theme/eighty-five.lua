@@ -152,7 +152,7 @@ local theme = lush(function()
     FoldColumn      { Normal }, 
 
     -- column where |signs| are displayed
-    SignColumn      { Normal }, 
+    SignColumn      { fg = bg.lighten(50), bg = bg }, 
 
     -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     IncSearch       { bg = yellow.darken(15), fg = Normal.bg.darken(10) },
@@ -320,9 +320,9 @@ local theme = lush(function()
     -- use these groups, or use their own. Consult your LSP client's
     -- documentation.
 
-    -- LspReferenceText                     { }, -- used for highlighting "text" references
-    -- LspReferenceRead                     { }, -- used for highlighting "read" references
-    -- LspReferenceWrite                    { }, -- used for highlighting "write" references
+    LspReferenceText  { fg = SignColumn.fg, gui = "bold" }, -- used for highlighting "text" references
+    LspReferenceRead  { fg = SignColumn.fg, gui = "bold" }, -- used for highlighting "read" references
+    LspReferenceWrite { fg = SignColumn.fg, gui = "bold" }, -- used for highlighting "write" references
 
     -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     DiagnosticError   { Error },  
