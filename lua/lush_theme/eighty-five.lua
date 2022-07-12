@@ -86,13 +86,13 @@ local theme = lush(function()
     -- or leave them commented to apply vims default colouring or linking.
 
     -- normal text
-    Normal          { bg = bg, fg = text }, 
+    Normal { bg = bg, fg = text },
 
     -- any comment
-    Comment         { fg = grey400, gui = "italic" }, 
+    Comment { fg = grey400, gui = "italic" },
 
-     -- used for the columns set with 'colorcolumn'
-    ColorColumn     { bg = bg_light },
+    -- used for the columns set with 'colorcolumn'
+    ColorColumn { bg = bg_light },
 
     -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Conceal      { },
@@ -110,25 +110,25 @@ local theme = lush(function()
     -- CursorColumn { },
 
     -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    CursorLine      { bg = bg_light },
+    CursorLine { bg = bg_light },
 
     -- directory names (and other special names in listings)
-    Directory       { fg = accent },
+    Directory { fg = accent },
 
     -- diff mode: Added line |diff.txt|
-    DiffAdd         { fg = green },
+    DiffAdd { fg = green },
 
     -- diff mode: Changed line |diff.txt|
-    DiffChange      { fg = purple },
+    DiffChange { fg = purple },
 
     -- diff mode: Deleted line |diff.txt|
-    DiffDelete      { fg = red },
+    DiffDelete { fg = red },
 
     -- diff mode: Changed text within a changed line |diff.txt|
-    DiffText        { fg = red, gui = "inverse" },
+    DiffText { fg = red, gui = "inverse" },
 
     -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-    EndOfBuffer     { fg = bg },
+    EndOfBuffer { fg = bg },
 
     -- cursor in a focused terminal
     -- TermCursor   { },
@@ -137,28 +137,28 @@ local theme = lush(function()
     -- TermCursorNC { },
 
     -- error messages on the command line
-    ErrorMsg        { fg = red, gui = "bold" }, 
+    ErrorMsg { fg = red, gui = "bold" },
 
     -- Borders around float
-    FloatBorder     { bg = bg, fg = blue },
+    FloatBorder { bg = bg, fg = blue },
 
     -- the column separating vertically split windows
-    VertSplit       { bg = bg, fg = grey500 },
+    VertSplit { bg = bg, fg = grey500 },
 
     -- line used for closed folds
-    Folded          { bg = grey600, fg = text }, 
+    Folded { bg = grey600, fg = text },
 
     -- 'foldcolumn'
-    FoldColumn      { Normal }, 
+    FoldColumn { Normal },
 
     -- column where |signs| are displayed
-    SignColumn      { fg = bg.lighten(50), bg = bg }, 
+    SignColumn { fg = bg.lighten(50), bg = bg },
 
     -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-    IncSearch       { bg = yellow.darken(15), fg = Normal.bg.darken(10) },
+    IncSearch { bg = yellow.darken(15), fg = Normal.bg.darken(10) },
 
     -- |:substitute| replacement text highlighting
-    -- Substitute   { }, 
+    -- Substitute   { },
 
     -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     LineNr          { fg = yellow }, 
@@ -167,101 +167,101 @@ local theme = lush(function()
      CursorLineNr { fg = yellow }, 
 
     -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-    MatchParen      { fg = orange, gui = "bold" }, 
+    MatchParen { fg = orange, gui = "bold" },
 
-    Noise           { fg = grey400 },
+    Noise { fg = grey400 },
 
     -- 'showmode' message (e.g., "-- INSERT -- ")
     -- ModeMsg      { fg = green },
 
     -- Area for messages and cmdline
-    -- MsgArea      { }, 
+    -- MsgArea      { },
 
     -- Separator for scrolled messages, `msgsep` flag of 'display'
-    -- MsgSeparator { }, 
+    -- MsgSeparator { },
 
     -- |more-prompt|
-    MoreMsg      { fg = green, gui = "bold" }, 
+    MoreMsg { fg = green, gui = "bold" },
 
     -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    NonText         { Comment },
+    NonText { Comment },
 
     -- Normal text in floating windows.
-    NormalFloat     { bg = bg , fg = text_dim }, 
+    NormalFloat { bg = bg, fg = text_dim },
 
     -- normal text in non-current windows
-    -- NormalNC     { }, 
+    -- NormalNC     { },
 
     -- Popup menu: normal item.
-    Pmenu           { bg = grey700 },
+    Pmenu { bg = grey700 },
 
     -- Popup menu: selected item.
-    PmenuSel        { bg = Pmenu.bg.lighten(20), fg = text },
+    PmenuSel { bg = Pmenu.bg.lighten(20), fg = text },
 
     -- Popup menu: scrollbar.
-    PmenuSbar       { Normal }, 
+    PmenuSbar { Normal },
 
     -- Popup menu: Thumb of the scrollbar.
-    PmenuThumb      { bg = grey500 },
+    PmenuThumb { bg = grey500 },
 
     -- |hit-enter| prompt and yes/no questions
-    Question        { Normal },
+    Question { Normal },
 
     -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    -- QuickFixLine { }, 
+    -- QuickFixLine { },
 
     -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-    Search          { bg = grey500, fg = text },
+    Search { bg = grey500, fg = text },
 
     -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-    SpecialKey      { Normal },
+    SpecialKey { Normal },
 
     -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-    SpellBad        { fg = text.mix(red, 70), gui = "undercurl" },
+    SpellBad { fg = text.mix(red, 70), gui = "undercurl" },
 
     -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-    -- SpellCap     { }, 
+    -- SpellCap     { },
 
     -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-    -- SpellLocal   { }, 
+    -- SpellLocal   { },
 
     -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    -- SpellRare    { }, 
+    -- SpellRare    { },
 
     -- status line of current window
-    StatusLine      { Normal }, 
+    StatusLine { Normal },
 
     -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window. Need separate def to avoid carets
-    StatusLineNC    { bg = bg, fg = text }, 
+    StatusLineNC { bg = bg, fg = text },
 
     -- tab pages line, not active tab page label
-    TabLine         { Normal },
+    TabLine { Normal },
 
     -- tab pages line, where there are no labels
-    TabLineFill     { Normal },
+    TabLineFill { Normal },
 
     -- tab pages line, active tab page label
-    -- TabLineSel   { }, 
+    -- TabLineSel   { },
 
     -- TabLineSel   { fg = green },
 
     -- titles for output from ":set all", ":autocmd" etc.
-    Title           { Normal },
+    Title { Normal },
 
     -- Visual mode selection
-    Visual          { bg = grey600, fg = text},
+    Visual { bg = grey600, fg = text },
 
     -- Visual mode selection when vim is "Not Owning the Selection".
-    -- VisualNOS    { }, 
+    -- VisualNOS    { },
 
     -- warning messages
-    WarningMsg      { Normal },
+    WarningMsg { Normal },
 
     -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    -- Whitespace   { }, 
+    -- Whitespace   { },
 
     -- current match in 'wildmenu' completion
-    WildMenu        { Normal },
+    WildMenu { Normal },
 
 
     -- These groups are not listed as default vim groups,
@@ -270,71 +270,71 @@ local theme = lush(function()
     -- default,
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Constant        { Normal },       -- (preferred) any constant
-    String          { fg = yellow },  --  a string constant: "this is a string"
+    Constant { Normal }, -- (preferred) any constant
+    String { fg = yellow }, --  a string constant: "this is a string"
     -- Character    { },              --  a character constant: 'c', '\n'
     -- Number       { fg = purple },  --  a number constant: 234, 0xff
     -- Boolean      { },              --  a boolean constant: TRUE, false
     -- Float        { },              --  a floating point constant: 2.3e10
 
-    Identifier      { Normal },       -- (preferred) any variable name
-    Function        { fg = text },    -- function name (also: methods for classes)
+    Identifier { Normal }, -- (preferred) any variable name
+    Function { fg = text }, -- function name (also: methods for classes)
 
-    Statement       { Normal },       -- (preferred) any statement
-    Conditional     { fg = orange },            --  if, then, else, endif, switch, etc.
-    Repeat          { fg = accent },            --   for, do, while, etc.
+    Statement { Normal }, -- (preferred) any statement
+    Conditional { fg = orange }, --  if, then, else, endif, switch, etc.
+    Repeat { fg = accent }, --   for, do, while, etc.
     -- Label          { },            --    case, default, etc.
     -- Operator       { },            -- "sizeof", "+", "*", etc.
     -- Keyword         { fg = accent },  --  any other keyword,  Keyword {}
     -- Exception      { },            --  try, catch, throw
 
-    PreProc         { Normal },       -- (preferred) generic Preprocessor
+    PreProc { Normal }, -- (preferred) generic Preprocessor
     -- Include        { },            --  preprocessor #include
     -- Define         { },            --   preprocessor #define
     -- Macro          { },            --    same as Define
     -- PreCondit      { },            --  preprocessor #if, #else, #endif, etc.
 
-    Type            { Normal },       -- (preferred) int, long, char, etc.
-    StorageClass    { fg = accent },  -- static, register, volatile, etc.
+    Type { Normal }, -- (preferred) int, long, char, etc.
+    StorageClass { fg = accent }, -- static, register, volatile, etc.
     -- Structure      { },            --  struct, union, enum, etc.
     -- Typedef        { },            --  A typedef
 
-    Special         { Normal },       -- (preferred) any special symbol
-    SpecialChar     { Normal },       --  special character in a constant
+    Special { Normal }, -- (preferred) any special symbol
+    SpecialChar { Normal }, --  special character in a constant
     -- Tag            { },            --    you can use CTRL-] on this
-    Delimiter       { Normal },       --  character that needs attention
+    Delimiter { Normal }, --  character that needs attention
     -- SpecialComment { },            -- special things inside a comment
     -- Debug          { },            --    debugging statements
 
-    Underlined      { fg = accent, gui = "underline" }, -- (preferred) text that stands out, HTML links
+    Underlined { fg = accent, gui = "underline" }, -- (preferred) text that stands out, HTML links
     -- Bold         { gui = "bold" },
     -- Italic       { gui = "italic" },
 
     -- ("Ignore", below, may be invisible...)
     -- Ignore         { },            -- (preferred) left blank, hidden  |hl-Ignore|
 
-    Error           { fg = error },   -- (preferred) any erroneous construct
-    Todo            { fg = yellow, gui = 'bold' },       -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Error { fg = error }, -- (preferred) any erroneous construct
+    Todo { fg = yellow, gui = 'bold' }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
     -- documentation.
 
-    LspReferenceText  { fg = SignColumn.fg, gui = "bold" }, -- used for highlighting "text" references
-    LspReferenceRead  { fg = SignColumn.fg, gui = "bold" }, -- used for highlighting "read" references
+    LspReferenceText { fg = SignColumn.fg, gui = "bold" }, -- used for highlighting "text" references
+    LspReferenceRead { fg = SignColumn.fg, gui = "bold" }, -- used for highlighting "read" references
     LspReferenceWrite { fg = SignColumn.fg, gui = "bold" }, -- used for highlighting "write" references
 
     -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticError   { Error },  
+    DiagnosticError { Error },
 
     -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticWarn    { fg = yellow },
+    DiagnosticWarn { fg = yellow },
 
     -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticInfo    { fg = accent },
+    DiagnosticInfo { fg = accent },
 
     -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticHint    { fg = text_dim },
+    DiagnosticHint { fg = text_dim },
 
     -- DiagnosticVirtualTextError       { }, -- Used for "Error" diagnostic virtual text
     -- DiagnosticVirtualTextWarning     { }, -- Used for "Warning" diagnostic virtual text
@@ -372,9 +372,9 @@ local theme = lush(function()
 
     -- diff -------------------------------------------------------------------
 
-    diffAdded   { DiffAdd },
-    diffChanged   { DiffChange },
-    diffRemoved   { DiffDelete },
+    diffAdded { DiffAdd },
+    diffChanged { DiffChange },
+    diffRemoved { DiffDelete },
 
     -- JS / TS ----------------------------------------------------------------
 
@@ -382,64 +382,69 @@ local theme = lush(function()
     -- jsExport                   { StorageClass },
     -- jsBuiltinValues            { StorageClass },
     -- jsFunction                 { StorageClass },
-    jsStorageClass                { StorageClass },
-    jsReturn                      { fg = orange },
-    typescriptImport              { StorageClass },
-    typescriptExport              { StorageClass },
-    typescriptVariable            { StorageClass },
-    typescriptFuncKeyword      { StorageClass },
+    jsStorageClass { StorageClass },
+    jsReturn { fg = orange },
+    typescriptImport { StorageClass },
+    typescriptExport { StorageClass },
+    typescriptVariable { StorageClass },
+    typescriptFuncKeyword { StorageClass },
     -- typescriptStatementKeyword { StorageClass },
     -- typescriptBoolean          { StorageClass },
     -- typescriptGlobal           { StorageClass },
-    typescriptBOMWindowMethod     { fg = purple },
-    jsxComponentName              { fg = text_dim },
-    jsxAttrib                     { fg = accent_light },
+    typescriptBOMWindowMethod { fg = purple },
+    jsxComponentName { fg = text_dim },
+    jsxAttrib { fg = accent_light },
 
     -- CSS --------------------------------------------------------------------
 
     -- cssTagName       { StorageClass },
     -- cssClassName     { fg = StorageClass.fg.darken(10) },
-    cssFunctionName     { fg = purple },
-    cssUnitDecorators   { fg = text.darken(10).desaturate(10) },
+    cssFunctionName { fg = purple },
+    cssUnitDecorators { fg = text.darken(10).desaturate(10) },
 
     -- Elixir ----------------------------------------------------------------
 
-    elixirModuleDefine  { fg = accent },
-    elixirMacroDefine   { elixirModuleDefine },
-    elixirDefine        { elixirModuleDefine },
+    elixirModuleDefine { fg = accent },
+    elixirMacroDefine { elixirModuleDefine },
+    elixirDefine { elixirModuleDefine },
 
     -- Lua -------------------------------------------------------------------
 
-    luaLocal    { StorageClass },
-    luaRepeat    { StorageClass },
+    luaLocal { StorageClass },
+    luaRepeat { StorageClass },
 
     -- Markdown ---------------------------------------------------------------
 
-    markdownH1  { fg = accent },
-    markdownH2  { fg = accent },
-    markdownH3  { fg = accent },
-    markdownH4  { fg = accent },
-    markdownH5  { fg = accent },
-    markdownH6  { fg = accent },
-    htmlH1  { fg = accent },
-    htmlH2  { fg = accent },
-    htmlH3  { fg = accent },
-    htmlH4  { fg = accent },
-    htmlH5  { fg = accent },
-    htmlH6  { fg = accent },
-    markdownHeading  { fg = accent },
+    markdownH1 { fg = accent },
+    markdownH2 { fg = accent },
+    markdownH3 { fg = accent },
+    markdownH4 { fg = accent },
+    markdownH5 { fg = accent },
+    markdownH6 { fg = accent },
+    htmlH1 { fg = accent },
+    htmlH2 { fg = accent },
+    htmlH3 { fg = accent },
+    htmlH4 { fg = accent },
+    htmlH5 { fg = accent },
+    htmlH6 { fg = accent },
+    markdownHeading { fg = accent },
 
     -- HTML -------------------------------------------------------------------
 
-    htmlArg   { fg = accent_light },
-    htmlTagName   { fg = text_dim },
+    htmlArg { fg = accent_light },
+    htmlTagName { fg = text_dim },
+
+    -- SQL --------------------------------------------------------------------
+    sqlStatement { fg = accent },
+    sqlKeyword { fg = accent },
+    sqlType { fg = orange },
 
     -- Plugins ----------------------------------------------------------------
-    
+
     -- Packer -----------------------------------------------------------------
     packerStatusSuccess { fg = green, gui = 'bold' },
-    packerOutput        { gui = 'bold' },
-    packerHash          { fg = accent },
+    packerOutput { gui = 'bold' },
+    packerHash { fg = accent },
 
     -- nvim-cmp ---------------------------------------------------------------
 
@@ -448,13 +453,13 @@ local theme = lush(function()
 
     -- CmpItemAbbr = { fg = c.fg, bg = c.none },
     -- CmpItemAbbrDeprecated = { fg = c.fg_gutter, bg = c.none, style = "strikethrough" },
-    CmpItemAbbrMatch            { fg = text, bg = "NONE", gui = "bold" },
+    CmpItemAbbrMatch { fg = text, bg = "NONE", gui = "bold" },
     -- CmpItemAbbrMatchFuzzy = { fg = c.blue1, bg = c.none },
 
-    CmpItemKindDefault        { fg = teal },
+    CmpItemKindDefault { fg = teal },
     -- CmpItemMenu = { fg = c.comment, bg = c.none },
 
-    CmpItemKindKeyword        { fg = teal, bg = "NONE" },
+    CmpItemKindKeyword { fg = teal, bg = "NONE" },
 
     -- CmpItemKindVariable = { fg = c.magenta, bg = c.none },
     -- CmpItemKindConstant = { fg = c.magenta, bg = c.none },
@@ -493,7 +498,7 @@ local theme = lush(function()
     -- TSCharacter          { };    -- For characters.
     -- TSComment            { };    -- For comment blocks.
     -- TSConstructor        { };    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
-    TSConditional           { fg = orange };    -- For keywords related to conditionnals.
+    TSConditional { fg = orange }; -- For keywords related to conditionnals.
     -- TSConstant           { };    -- For constants
     -- TSConstBuiltin       { };    -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro         { };    -- For constants that are defined by macros: `NULL` in C.
@@ -504,10 +509,10 @@ local theme = lush(function()
     -- TSFunction           { fg = Normal.fg.mix(purple, 70) }, -- For function (calls and definitions).
     -- TSFuncBuiltin        { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro          { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    TSInclude               { fg = accent };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword               { StorageClass },-- For keywords that don't fall in previous categories. Ex: const
-    TSKeywordFunction       { StorageClass },
-    TSKeywordReturn         { fg = orange },
+    TSInclude { fg = accent }; -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    TSKeyword { StorageClass }, -- For keywords that don't fall in previous categories. Ex: const
+    TSKeywordFunction { StorageClass },
+    TSKeywordReturn { fg = orange },
     -- TSLabel              { };    -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod             { TSFunction },-- For method calls and definitions.
     -- TSNamespace          { };    -- For identifiers referring to modules and namespaces.
@@ -517,7 +522,7 @@ local theme = lush(function()
     -- TSParameter          { },    -- For parameters of a function.
     -- TSParameterReference { };    -- For references to parameters of a function.
     -- TSProperty           { };    -- Same as `TSField`.
-    TSPunctDelimiter        { Noise }, -- For delimiters ie: `.`
+    TSPunctDelimiter { Noise }, -- For delimiters ie: `.`
     -- TSPunctBracket       { };    -- For brackets and parens.
     -- TSPunctSpecial       { };    -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat                { fg = accent }, -- For keywords related to loops.
@@ -525,13 +530,13 @@ local theme = lush(function()
     -- TSStringRegex        { };    -- For regexes.
     -- TSStringEscape       { };    -- For escape characters within a string.
     -- TSSymbol             { };    -- For identifiers referring to symbols or atoms.
-    TSType                  { fg = text_dim }, -- For types.
-    TSTypeBuiltin           { TSType }, -- For builtin types.
+    TSType { fg = text_dim }, -- For types.
+    TSTypeBuiltin { TSType }, -- For builtin types.
     -- TSVariable           { };    -- Any variable name that does not have another highlight.
-    TSVariableBuiltin       { fg = text_dim }, -- Variable names that are defined by the languages, like `this` or `self`.
+    TSVariableBuiltin { fg = text_dim }, -- Variable names that are defined by the languages, like `this` or `self`.
 
-    TSTag                   { fg = text_dim };    -- Tags like html tag names.
-    TSTagAttribute          { fg = accent_light },-- Tags like html tag names.
+    TSTag { fg = text_dim }; -- Tags like html tag names.
+    TSTagAttribute { fg = accent_light }, -- Tags like html tag names.
     -- TSTagDelimiter       { };    -- Tag delimiter like `<` `>` `/`
     -- TSText               { };    -- For strings considered text in a markup language.
     -- TSEmphasis           { };    -- For text to be represented with emphasis.
