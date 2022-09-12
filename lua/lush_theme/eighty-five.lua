@@ -161,10 +161,10 @@ local theme = lush(function()
     -- Substitute   { },
 
     -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    LineNr          { fg = yellow }, 
+    LineNr { fg = grey400 },
 
     -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-     CursorLineNr { fg = yellow }, 
+    CursorLineNr { fg = yellow },
 
     -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     MatchParen { fg = orange, gui = "bold" },
