@@ -71,7 +71,8 @@ local accent_light = text.mix(accent, 80)
 -- support an annotation like the following. Consult your server documentation.
 ---@diagnostic disable: undefined-global
 -- stylua: ignore start
-local theme = lush(function()
+local theme = lush(function(injected_functions)
+  local sym = injected_functions.sym
   return {
     -- The following are all the Neovim default highlight groups from the docs
     -- as of 0.5.0-nightly-446, to aid your theme creation. Your themes should
@@ -499,6 +500,7 @@ local theme = lush(function()
     -- TSComment            { };    -- For comment blocks.
     -- TSConstructor        { };    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
     TSConditional { fg = orange }; -- For keywords related to conditionnals.
+    sym("@conditional") { fg = orange }; -- For keywords related to conditionnals.
     -- TSConstant           { };    -- For constants
     -- TSConstBuiltin       { };    -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro         { };    -- For constants that are defined by macros: `NULL` in C.
@@ -510,9 +512,13 @@ local theme = lush(function()
     -- TSFuncBuiltin        { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro          { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     TSInclude { fg = accent }; -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    sym("@include") { fg = accent };
     TSKeyword { StorageClass }, -- For keywords that don't fall in previous categories. Ex: const
+    sym("@keyword") { StorageClass }, -- For keywords that don't fall in previous categories. Ex: const
     TSKeywordFunction { StorageClass },
+    sym("@keyword.function") { StorageClass }, -- For keywords that don't fall in previous categories. Ex: const
     TSKeywordReturn { fg = orange },
+    sym("@keyword.return") { fg = orange }, -- For keywords that don't fall in previous categories. Ex: const
     -- TSLabel              { };    -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod             { TSFunction },-- For method calls and definitions.
     -- TSNamespace          { };    -- For identifiers referring to modules and namespaces.
@@ -523,6 +529,7 @@ local theme = lush(function()
     -- TSParameterReference { };    -- For references to parameters of a function.
     -- TSProperty           { };    -- Same as `TSField`.
     TSPunctDelimiter { Noise }, -- For delimiters ie: `.`
+    sym("@punctutation.delimiter") { Noise },
     -- TSPunctBracket       { };    -- For brackets and parens.
     -- TSPunctSpecial       { };    -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat                { fg = accent }, -- For keywords related to loops.
@@ -531,12 +538,17 @@ local theme = lush(function()
     -- TSStringEscape       { };    -- For escape characters within a string.
     -- TSSymbol             { };    -- For identifiers referring to symbols or atoms.
     TSType { fg = text_dim }, -- For types.
+    sym("@type") { fg = text_dim }, -- For types.
     TSTypeBuiltin { TSType }, -- For builtin types.
+    sym("@type.builtin") { TSType }, -- For builtin types.
     -- TSVariable           { };    -- Any variable name that does not have another highlight.
     TSVariableBuiltin { fg = text_dim }, -- Variable names that are defined by the languages, like `this` or `self`.
+    sym("@variable.builtin") { fg = text_dim }, -- Variable names that are defined by the languages, like `this` or `self`.
 
     TSTag { fg = text_dim }; -- Tags like html tag names.
+    sym("@tag") { fg = text_dim }; -- Tags like html tag names.
     TSTagAttribute { fg = accent_light }, -- Tags like html tag names.
+    sym("@tag.attribute") { fg = accent_light }, -- Tags like html tag names.
     -- TSTagDelimiter       { };    -- Tag delimiter like `<` `>` `/`
     -- TSText               { };    -- For strings considered text in a markup language.
     -- TSEmphasis           { };    -- For text to be represented with emphasis.
