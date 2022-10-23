@@ -218,7 +218,7 @@ local theme = lush(function(injected_functions)
     SpecialKey { Normal },
 
     -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-    SpellBad { fg = grey400.mix(red, 20), gui = "undercurl" },
+    SpellBad { fg = grey400.mix(red, 70), gui = "underdashed" },
 
     -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     -- SpellCap     { },
