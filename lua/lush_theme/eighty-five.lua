@@ -454,21 +454,21 @@ local theme = lush(function(injected_functions)
 
     -- CmpItemAbbr = { fg = c.fg, bg = c.none },
     -- CmpItemAbbrDeprecated = { fg = c.fg_gutter, bg = c.none, style = "strikethrough" },
-    CmpItemAbbrMatch { fg = text, bg = "NONE", gui = "bold" },
+    CmpItemAbbrMatch { fg = blue, bg = "NONE", gui = "bold" },
     -- CmpItemAbbrMatchFuzzy = { fg = c.blue1, bg = c.none },
 
-    CmpItemKindDefault { fg = teal },
+    CmpItemKindDefault { fg = text_dim },
     -- CmpItemMenu = { fg = c.comment, bg = c.none },
 
-    CmpItemKindKeyword { fg = teal, bg = "NONE" },
+    CmpItemKindKeyword { fg = text_dim },
 
-    -- CmpItemKindVariable = { fg = c.magenta, bg = c.none },
+    CmpItemKindVariable { fg = text_dim },
     -- CmpItemKindConstant = { fg = c.magenta, bg = c.none },
     -- CmpItemKindReference = { fg = c.magenta, bg = c.none },
     -- CmpItemKindValue = { fg = c.magenta, bg = c.none },
 
-    -- CmpItemKindFunction = { fg = c.blue, bg = c.none },
-    -- CmpItemKindMethod = { fg = c.blue, bg = c.none },
+    CmpItemKindFunction { fg = purple },
+    CmpItemKindMethod { fg = text_dim },
     -- CmpItemKindConstructor = { fg = c.blue, bg = c.none },
 
     -- CmpItemKindClass = { fg = c.orange, bg = c.none },
@@ -478,14 +478,16 @@ local theme = lush(function(injected_functions)
     -- CmpItemKindEnum = { fg = c.orange, bg = c.none },
     -- CmpItemKindUnit = { fg = c.orange, bg = c.none },
 
-    -- CmpItemKindModule = { fg = c.yellow, bg = c.none },
+    CmpItemKindModule { fg = purple },
 
     -- CmpItemKindProperty = { fg = c.green1, bg = c.none },
     -- CmpItemKindField = { fg = c.green1, bg = c.none },
     -- CmpItemKindTypeParameter = { fg = c.green1, bg = c.none },
     -- CmpItemKindEnumMember = { fg = c.green1, bg = c.none },
     -- CmpItemKindOperator = { fg = c.green1, bg = c.none },
-    -- CmpItemKindSnippet = { fg = c.dark5, bg = c.none },
+    CmpItemKindSnippet { fg = green },
+
+    TelescopeBorder { fg = grey400 },
 
     -- These groups are for the neovim tree-sitter highlights.
     -- As of writing, tree-sitter support is a WIP, group names may change.
