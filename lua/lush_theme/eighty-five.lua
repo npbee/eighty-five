@@ -141,7 +141,7 @@ local theme = lush(function(injected_functions)
     ErrorMsg { fg = red, gui = "bold" },
 
     -- Borders around float
-    FloatBorder { bg = bg, fg = blue },
+    FloatBorder { bg = bg, fg = grey400 },
 
     -- the column separating vertically split windows
     VertSplit { bg = bg, fg = grey500 },
