@@ -23,7 +23,7 @@ const templateStr: string = `Hello, ${str}!`;
 
 /*
  * Multiline comments
- * Multiline comments
+ * Multiline comments bd word
  */
 
 interface SquareConfig {
