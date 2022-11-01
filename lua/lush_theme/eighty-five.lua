@@ -440,6 +440,11 @@ local theme = lush(function(injected_functions)
     sqlKeyword { fg = accent },
     sqlType { fg = orange },
 
+    -- Python ----------------------------------------------------------------
+    pythonImport { StorageClass },
+    pythonStatement { StorageClass },
+
+
     -- Plugins ----------------------------------------------------------------
 
     -- Packer -----------------------------------------------------------------
