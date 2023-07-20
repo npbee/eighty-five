@@ -229,6 +229,8 @@ local theme = lush(function(injected_functions)
     -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
     -- SpellRare    { },
 
+    Split { bg = bg, fg = grey500 },
+
     -- status line of current window
     StatusLine { Normal },
 
