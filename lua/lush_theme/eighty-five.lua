@@ -233,7 +233,7 @@ local theme = lush(function(injected_functions)
     StatusLine { Normal },
 
     -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window. Need separate def to avoid carets
-    StatusLineNC { bg = bg, fg = text },
+    StatusLineNC { bg = bg, fg = green },
 
     -- tab pages line, not active tab page label
     TabLine { Normal },
@@ -271,19 +271,19 @@ local theme = lush(function(injected_functions)
     -- default,
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Constant { Normal }, -- (preferred) any constant
+    Constant { Normal },    -- (preferred) any constant
     String { fg = yellow }, --  a string constant: "this is a string"
     -- Character    { },              --  a character constant: 'c', '\n'
     -- Number       { fg = purple },  --  a number constant: 234, 0xff
     -- Boolean      { },              --  a boolean constant: TRUE, false
     -- Float        { },              --  a floating point constant: 2.3e10
 
-    Identifier { Normal }, -- (preferred) any variable name
-    Function { fg = text }, -- function name (also: methods for classes)
+    Identifier { Normal },       -- (preferred) any variable name
+    Function { fg = text },      -- function name (also: methods for classes)
 
-    Statement { Normal }, -- (preferred) any statement
+    Statement { Normal },        -- (preferred) any statement
     Conditional { fg = orange }, --  if, then, else, endif, switch, etc.
-    Repeat { fg = accent }, --   for, do, while, etc.
+    Repeat { fg = accent },      --   for, do, while, etc.
     -- Label          { },            --    case, default, etc.
     -- Operator       { },            -- "sizeof", "+", "*", etc.
     -- Keyword         { fg = accent },  --  any other keyword,  Keyword {}
@@ -295,15 +295,15 @@ local theme = lush(function(injected_functions)
     -- Macro          { },            --    same as Define
     -- PreCondit      { },            --  preprocessor #if, #else, #endif, etc.
 
-    Type { Normal }, -- (preferred) int, long, char, etc.
+    Type { Normal },              -- (preferred) int, long, char, etc.
     StorageClass { fg = accent }, -- static, register, volatile, etc.
     -- Structure      { },            --  struct, union, enum, etc.
     -- Typedef        { },            --  A typedef
 
-    Special { Normal }, -- (preferred) any special symbol
+    Special { Normal },     -- (preferred) any special symbol
     SpecialChar { Normal }, --  special character in a constant
     -- Tag            { },            --    you can use CTRL-] on this
-    Delimiter { Normal }, --  character that needs attention
+    Delimiter { Normal },   --  character that needs attention
     -- SpecialComment { },            -- special things inside a comment
     -- Debug          { },            --    debugging statements
 
@@ -314,15 +314,15 @@ local theme = lush(function(injected_functions)
     -- ("Ignore", below, may be invisible...)
     -- Ignore         { },            -- (preferred) left blank, hidden  |hl-Ignore|
 
-    Error { fg = error }, -- (preferred) any erroneous construct
+    Error { fg = error },               -- (preferred) any erroneous construct
     Todo { fg = yellow, gui = 'bold' }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
     -- documentation.
 
-    LspReferenceText { fg = SignColumn.fg, gui = "bold" }, -- used for highlighting "text" references
-    LspReferenceRead { fg = SignColumn.fg, gui = "bold" }, -- used for highlighting "read" references
+    LspReferenceText { fg = SignColumn.fg, gui = "bold" },  -- used for highlighting "text" references
+    LspReferenceRead { fg = SignColumn.fg, gui = "bold" },  -- used for highlighting "read" references
     LspReferenceWrite { fg = SignColumn.fg, gui = "bold" }, -- used for highlighting "write" references
 
     -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
@@ -506,8 +506,8 @@ local theme = lush(function(injected_functions)
     -- TSCharacter          { };    -- For characters.
     -- TSComment            { };    -- For comment blocks.
     -- TSConstructor        { };    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
-    TSConditional { fg = orange }; -- For keywords related to conditionnals.
-    sym("@conditional") { fg = orange }; -- For keywords related to conditionnals.
+    TSConditional { fg = orange },       -- For keywords related to conditionnals.
+    sym("@conditional") { fg = orange }, -- For keywords related to conditionnals.
     -- TSConstant           { };    -- For constants
     -- TSConstBuiltin       { };    -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro         { };    -- For constants that are defined by macros: `NULL` in C.
@@ -518,14 +518,14 @@ local theme = lush(function(injected_functions)
     -- TSFunction           { fg = Normal.fg.mix(purple, 70) }, -- For function (calls and definitions).
     -- TSFuncBuiltin        { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro          { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    TSInclude { fg = accent }; -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    sym("@include") { fg = accent };
-    TSKeyword { StorageClass }, -- For keywords that don't fall in previous categories. Ex: const
-    sym("@keyword") { StorageClass }, -- For keywords that don't fall in previous categories. Ex: const
+    TSInclude { fg = accent },                 -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    sym("@include") { fg = accent },
+    TSKeyword { StorageClass },                -- For keywords that don't fall in previous categories. Ex: const
+    sym("@keyword") { StorageClass },          -- For keywords that don't fall in previous categories. Ex: const
     TSKeywordFunction { StorageClass },
     sym("@keyword.function") { StorageClass }, -- For keywords that don't fall in previous categories. Ex: const
     TSKeywordReturn { fg = orange },
-    sym("@keyword.return") { fg = orange }, -- For keywords that don't fall in previous categories. Ex: const
+    sym("@keyword.return") { fg = orange },    -- For keywords that don't fall in previous categories. Ex: const
     -- TSLabel              { };    -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod             { TSFunction },-- For method calls and definitions.
     -- TSNamespace          { };    -- For identifiers referring to modules and namespaces.
@@ -544,17 +544,17 @@ local theme = lush(function(injected_functions)
     -- TSStringRegex        { };    -- For regexes.
     -- TSStringEscape       { };    -- For escape characters within a string.
     -- TSSymbol             { };    -- For identifiers referring to symbols or atoms.
-    TSType { fg = text_dim }, -- For types.
-    sym("@type") { fg = text_dim }, -- For types.
-    TSTypeBuiltin { TSType }, -- For builtin types.
-    sym("@type.builtin") { TSType }, -- For builtin types.
+    TSType { fg = text_dim },                    -- For types.
+    sym("@type") { fg = text_dim },              -- For types.
+    TSTypeBuiltin { TSType },                    -- For builtin types.
+    sym("@type.builtin") { TSType },             -- For builtin types.
     -- TSVariable           { };    -- Any variable name that does not have another highlight.
-    TSVariableBuiltin { fg = text_dim }, -- Variable names that are defined by the languages, like `this` or `self`.
-    sym("@variable.builtin") { fg = text_dim }, -- Variable names that are defined by the languages, like `this` or `self`.
+    TSVariableBuiltin { fg = text_dim },         -- Variable names that are defined by the languages, like `this` or `self`.
+    sym("@variable.builtin") { fg = text_dim },  -- Variable names that are defined by the languages, like `this` or `self`.
 
-    TSTag { fg = text_dim }; -- Tags like html tag names.
-    sym("@tag") { fg = text_dim }; -- Tags like html tag names.
-    TSTagAttribute { fg = accent_light }, -- Tags like html tag names.
+    TSTag { fg = text_dim },                     -- Tags like html tag names.
+    sym("@tag") { fg = text_dim },               -- Tags like html tag names.
+    TSTagAttribute { fg = accent_light },        -- Tags like html tag names.
     sym("@tag.attribute") { fg = accent_light }, -- Tags like html tag names.
     -- TSTagDelimiter       { };    -- Tag delimiter like `<` `>` `/`
     -- TSText               { };    -- For strings considered text in a markup language.
