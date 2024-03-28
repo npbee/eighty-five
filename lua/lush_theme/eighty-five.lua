@@ -197,7 +197,7 @@ local theme = lush(function(injected_functions)
     Pmenu { bg = grey700 },
 
     -- Popup menu: selected item.
-    PmenuSel { bg = Pmenu.bg.lighten(20), fg = text },
+    PmenuSel { bg = Pmenu.bg.lighten(20), fg = "NONE" },
 
     -- Popup menu: scrollbar.
     PmenuSbar { Normal },
