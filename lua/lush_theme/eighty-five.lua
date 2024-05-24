@@ -553,6 +553,8 @@ local theme = lush(function(injected_functions)
     -- TSVariable           { };    -- Any variable name that does not have another highlight.
     TSVariableBuiltin { fg = text_dim },         -- Variable names that are defined by the languages, like `this` or `self`.
     sym("@variable.builtin") { fg = text_dim },  -- Variable names that are defined by the languages, like `this` or `self`.
+    sym("@variable") { Normal },  -- Variable names that are defined by the languages, like `this` or `self`.
+    sym("@operator") { Normal },  -- Variable names that are defined by the languages, like `this` or `self`.
 
     TSTag { fg = text_dim },                     -- Tags like html tag names.
     sym("@tag") { fg = text_dim },               -- Tags like html tag names.
