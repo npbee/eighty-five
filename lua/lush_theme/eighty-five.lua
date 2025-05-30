@@ -234,6 +234,13 @@ local theme = lush(function(injected_functions)
     -- status line of current window
     StatusLine { Normal },
 
+    StatuslineAccent { bg = blue, fg = bg, gui = 'bold' },
+    StatuslineInsertAccent { bg = green, fg = bg, gui = 'bold' },
+    StatuslineVisualAccent { bg = purple, fg = bg, gui = 'bold' },
+    StatuslineReplaceAccent { bg = yellow, fg = bg, gui = 'bold' },
+    StatuslineCmdLineAccent { bg = teal, fg = bg, gui = 'bold' },
+    StatuslineTerminalAccent { bg = orange, fg = bg, gui = 'bold' },
+
     -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window. Need separate def to avoid carets
     StatusLineNC { bg = bg, fg = green },
 
@@ -553,8 +560,8 @@ local theme = lush(function(injected_functions)
     -- TSVariable           { };    -- Any variable name that does not have another highlight.
     TSVariableBuiltin { fg = text_dim },         -- Variable names that are defined by the languages, like `this` or `self`.
     sym("@variable.builtin") { fg = text_dim },  -- Variable names that are defined by the languages, like `this` or `self`.
-    sym("@variable") { Normal },  -- Variable names that are defined by the languages, like `this` or `self`.
-    sym("@operator") { Normal },  -- Variable names that are defined by the languages, like `this` or `self`.
+    sym("@variable") { Normal },                 -- Variable names that are defined by the languages, like `this` or `self`.
+    sym("@operator") { Normal },                 -- Variable names that are defined by the languages, like `this` or `self`.
 
     TSTag { fg = text_dim },                     -- Tags like html tag names.
     sym("@tag") { fg = text_dim },               -- Tags like html tag names.
